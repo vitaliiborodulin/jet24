@@ -516,6 +516,30 @@ input[type='submit'] {
   color: rgba(24, 24, 24, 0.7);
 }
 
+.flight {
+  background: url(../img/flight-bg.jpg) no-repeat center bottom / cover;
+  min-height: 50vh;
+  max-height: 700px;
+}
+
+.flight .h2 {
+  max-width: 480px;
+  padding: 20px 0;
+}
+
+.flight .h2 span {
+  display: block;
+}
+
+.contact {
+  min-height: 700px;
+}
+
+.footer {
+  padding: 60px 0;
+  background-color: #E9E5DF;
+}
+
 @media screen and (max-width: 768px) {
   section {
     padding: 30px 0;
@@ -593,6 +617,11 @@ input[type='submit'] {
 
   .services__descr {
     font-size: 13px;
+  }
+
+  .flight .h2 {
+    padding: 40px 0;
+    max-width: 100%;
   }
 }
 

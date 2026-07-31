@@ -1,7 +1,7 @@
 $(function() {
 
     
-    console.log(1);
+     AOS.init();
     
 
         
