@@ -1,0 +1,38 @@
+.guidance {
+    font-size: 18px;
+    .md(font-size, 15px);
+    
+    &__content {
+        padding: 80px 20px;
+        background: @light2 url(../img/guidance-bg.jpg) no-repeat center right/cover;
+
+        .md-block({
+            padding-top: 100px;
+            padding-bottom: 40px;
+            background: @light2 url(../img/guidance-bg-m.jpg) no-repeat center top/contain;
+        });
+    }
+
+    &__top {
+        margin-bottom: 32px;
+        .md(margin-bottom, 16px);
+    }
+
+    &__bottom {
+        margin-top: 24px;
+        color: @text2;
+        .md(margin-top, 16px);
+    }
+
+    &__top, &__bottom {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 490px;
+    }
+
+    &__btn {
+        display: inline-block;
+        margin-top: 40px;
+        .md(margin-top, 28px);
+    }
+}

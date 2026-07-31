@@ -1,0 +1,34 @@
+.btn {
+    position: relative;
+    border: 1px solid rgba(5, 64, 66, 0.1);
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1;
+
+    padding: 20px 35px;
+    text-align: center;
+    
+    
+    color: @light2;
+    background: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
+   
+    cursor: pointer;
+
+    .md-block({
+        font-size: 13px;
+         padding: 16px 38px;
+    });
+
+    &::after {
+        display: block;
+        position: absolute;
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: @light2;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
