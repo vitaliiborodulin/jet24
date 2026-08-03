@@ -803,13 +803,13 @@ input[type='submit'] {
 }
 
 .guarantee__item {
-  display: flex;
-  padding: 24px;
+  position: relative;
   background-color: #9F9596;
   border-radius: 4px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  overflow: hidden;
 }
 
 .guarantee__item:nth-child(1) {
@@ -831,7 +831,10 @@ input[type='submit'] {
 }
 
 .guarantee__title {
-  margin-top: auto;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 24px;
   font-size: 20px;
   font-weight: 500;
   color: #F4F3EE;
@@ -1032,7 +1035,6 @@ input[type='submit'] {
   }
 
   .guarantee__item {
-    padding: 16px;
     min-height: 150px;
   }
 
@@ -1045,6 +1047,7 @@ input[type='submit'] {
   }
 
   .guarantee__title {
+    padding: 16px;
     font-size: 18px;
   }
 
