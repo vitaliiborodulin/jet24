@@ -24,16 +24,16 @@
     }
 
     &__item {
-        display: flex;
-        padding: 24px;
+        position: relative;
         background-color: #9F9596;
         border-radius: 4px;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
 
+        overflow: hidden;
+
         .md-block({
-            padding: 16px;
             min-height: 150px;
         });
     }
@@ -61,12 +61,18 @@
     }
 
     &__title {
-        margin-top: auto;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 24px;
         font-size: 20px;
         font-weight: 500;
         color: @light1;
 
-        .md(font-size, 18px);
+        .md-block({
+            padding: 16px;
+            font-size: 18px;
+        });
     }
     
 }
