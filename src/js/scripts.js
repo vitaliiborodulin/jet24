@@ -1,11 +1,9 @@
 $(function() {
 
-    
-    console.log(1);
-    
+     //= components/parallax
+     //= components/overlay
+     //= components/slider
 
-        
-        
 });
 
 

@@ -10,6 +10,8 @@
 @light1: #F4F3EE;
 @light2: #FCFAF4;
 
+@color-plus: #E9E5DF;
+
 
 @fontsize: 16px; // Body Font Size
 @lineheight: 1.2; // Document Line Height
@@ -108,18 +110,55 @@ main {
     min-height: 100vh;
 }
 
-section {
-    padding: 70px 0;
+.overflow {
+    overflow: hidden;
+}
+
+.tac {
+    text-align: center;
+}
+
+
+.home section {
+    position: relative;
+    margin: 140px 0;
 
     .md-block({
-        padding: 30px 0;
+        margin: 60px 0;
     });
+}
+
+.h1 {
+    font-family: "Unbounded", sans-serif;
+    font-weight: 400;
+    font-size: 44px;
+}
+
+.h2-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .h2 {
     font-family: "Unbounded", sans-serif;
+    font-weight: 400;
     font-size: 40px;
     .md(font-size, 24px);
+}
+
+section .h2 {
+    margin-bottom: 40px;
+    .md(margin-bottom, 28px);
+}
+
+section .h2-box {
+     margin-bottom: 40px;
+    .md(margin-bottom, 28px);
+}
+
+section .h2-box .h2 {
+    margin-bottom: 0;
 }
 
 .accent {
@@ -127,17 +166,6 @@ section {
 	-webkit-background-clip: text;
 	background-clip: text;
 	background-image: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
-}
-
-
-.overflow {
-    overflow: hidden;
-}
-
-
-
-.tac {
-    text-align: center;
 }
 
 

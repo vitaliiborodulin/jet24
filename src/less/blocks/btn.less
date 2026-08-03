@@ -1,5 +1,6 @@
 .btn {
     position: relative;
+    display: inline-block;
     border: 1px solid rgba(5, 64, 66, 0.1);
     border-radius: 4px;
     font-size: 14px;
@@ -7,16 +8,18 @@
 
     padding: 20px 35px;
     text-align: center;
-    
+
     
     color: @light2;
     background: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
    
+    z-index: 1;
+    overflow: hidden;
     cursor: pointer;
 
     .md-block({
         font-size: 13px;
-         padding: 16px 38px;
+        padding: 16px 38px;
     });
 
     &::after {
@@ -30,5 +33,22 @@
         right: 20px;
         top: 50%;
         transform: translateY(-50%);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(254.98deg, #054042 25.55%, #065558 84.76%);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        border-radius: inherit;
+        z-index: -1;
+    }
+
+    &:hover::before,
+    &:active::before,
+    &:focus::before {
+        opacity: 1;
     }
 }

@@ -1,0 +1,72 @@
+.guarantee {
+
+    .h2 {
+        margin-bottom: 60px;
+        .md(margin-bottom, 28px);
+    }
+
+    &__box {
+        display: grid;
+        grid-template-columns: 30% 40% 1fr;
+        grid-template-areas:
+            "a c d"
+            "b c d";
+        gap: 20px;
+
+        .md-block({
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "a a"
+                "b c"
+                "d d";
+            gap: 12px;
+        });
+    }
+
+    &__item {
+        display: flex;
+        padding: 24px;
+        background-color: #9F9596;
+        border-radius: 4px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        .md-block({
+            padding: 16px;
+            min-height: 150px;
+        });
+    }
+
+    &__item:nth-child(1) {
+        grid-area: a;
+        min-height: 227px;
+
+        .md(min-height, 130px);
+    }
+
+    &__item:nth-child(2) {
+        grid-area: b;
+        min-height: 172px;
+
+        .md(min-height, 130px);
+    }
+
+    &__item:nth-child(3) {
+        grid-area: c;
+    }
+
+    &__item:nth-child(4) {
+        grid-area: d;
+    }
+
+    &__title {
+        margin-top: auto;
+        font-size: 20px;
+        font-weight: 500;
+        color: @light1;
+
+        .md(font-size, 18px);
+    }
+    
+}
