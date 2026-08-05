@@ -1,31 +1,48 @@
 .hero {
     position: relative;
-    height: 100vh;
-    max-height: 800px;
-    // height: 800px;
+    padding-top: 100px;
+    padding-bottom: 40px;
     background: #EFE8E0 url(../img/hero-bg.jpg) no-repeat center bottom/cover;
     overflow: hidden;
-
-    .container {
-        height: 100%;
-    }
-
+    
     &__content {
-        height: 100%;
         display: flex;
         flex-direction: column;
-        // justify-content: center;
         align-items: center;
+        text-align: center;
+        height: 700px;
+        padding-top: 65px;
+        
+        .md-block({
+            max-height: 50vh;
+            padding-top: 34px;
+        });
     }
 
     &__descr {
         margin-top: 20px;
         max-width: 341px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 18px;
+        color: @text2;
+
+        .md-block({
+            margin-bottom: 20px;
+            font-size: 15px;
+        })
     }
 
-    &__obj {
-        position: absolute;
-        top: 20%;
-        right: -1000px;
+    &__obj1 {
+        will-change: transform;
+    }
+
+    &__form {
+        margin-top: auto;
+        width: 100%;
+        padding: 24px 20px;
+        border-radius: 4px;
+        background-color: rgba(252, 250, 244, 0.3);
+        backdrop-filter: blur(10px)
     }
 }

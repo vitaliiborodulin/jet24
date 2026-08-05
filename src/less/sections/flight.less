@@ -1,16 +1,25 @@
 .flight {
     background: url(../img/flight-bg.jpg) no-repeat center bottom/cover;
-    // min-height: 50vh;
-    // max-height: 700px;
-    height: 700px;
     overflow: hidden;
+    
+    &__content {
+        position: relative;
+        padding: 80px 0;
+        // min-height: 50vh;
+        // max-height: 700px;
+        height: 700px;
+        
+         .md-block({
+            max-height: 50vh;
+            padding: 40px 0;
+        });
+    }
     
     .h2 {
         max-width: 480px;
-        padding: 20px 0;
+        margin-bottom: 0;
 
         .md-block({
-            padding: 40px 0;
             max-width: 100%
         });
 
@@ -19,8 +28,15 @@
         }
     }
 
-    // &__obj {
-    //     position: absolute;
-    //     bottom: 0;
-    // }
+    &__obj {
+    //     // position: absolute;
+    //     // bottom: -300px;
+    //     // left: 50%;
+    //     // transform: translateX(-50%);
+    will-change: transform;
+
+    //     // .md-block({
+    //     //     bottom: -150px;
+    //     // });
+    }
 }
