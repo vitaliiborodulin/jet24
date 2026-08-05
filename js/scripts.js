@@ -2,44 +2,64 @@ $(function() {
 
      gsap.registerPlugin(ScrollTrigger);
      
-     gsap.to(".hero__obj", {
-       x: -1000, // сдвиг влево на 400 пикселей
-       ease: "none",
-       scrollTrigger: {
-         trigger: ".hero", // секция, за которой следим
-         start: "top bottom",    //когда верх секции касается низа экрана
-         end: "bottom top",      // когда низ секции уходит с экрана
-         scrub: true,             // плавная привязка к скроллу
-         //  markers: true      // Метки для отладки (уберите на продакшне)
-       }
+     const mm = gsap.matchMedia();
+     
+     mm.add("(min-width: 768px)", () => {
+       gsap.from(".hero__obj", {
+         x: 1500, 
+         ease: "none",
+         scrollTrigger: {
+           trigger: ".hero",
+           start: "top bottom",
+           end: "bottom top",
+           scrub: 2,
+           // markers: true
+         }
+       });
+     });
+     
+     mm.add("(max-width: 767px)", () => {
+       gsap.from(".hero__obj", {
+           x: 400, 
+           ease: "none",
+           scrollTrigger: {
+             trigger: ".hero",
+             start: "top bottom",
+             end: "bottom top",
+             scrub: 2,
+             // markers: true
+           }
+       });
      });
      
      
      
-     // gsap.from(".flight__obj", {
-     //   y: 100,         // смещение снизу в пикселях
-     //   ease: "none",
-     //   scrollTrigger: {
-     //     trigger: ".flight", // секция, за которой следим
-     //     start: "top bottom", // начало анимации, когда верх секции касается низа экрана
-     //      end: "bottom top",   // конец анимации
-     //     scrub: true,          // плавная привязка движения к скроллу
-         
-     //   }
+     
+     // mm.add("(min-width: 768px)", () => {
+       gsap.from(".flight__obj", {
+         y: 200,
+         ease: "none",
+         scrollTrigger: {
+           trigger: ".flight",
+           start: "top bottom",
+           end: "bottom top",
+           scrub: 2
+         }
+       });
      // });
      
-     gsap.from(".flight__obj", {
-       y: 150,          // Сдвиг на 150 пикселей вниз от исходной позиции
-       opacity: 0,      // Плавное появление
-       duration: 1,     // Длительность анимации
-       scrollTrigger: {
-         trigger: ".flight__obj", // Элемент, за которым следим
-         start: "top 80%",  // Анимация начнется, когда верхушка блока дойдет до 80% экрана
-         end: "top 30%",    // Конец анимации
-         scrub: true,       // Плавная привязка к скроллу мыши
-         // markers: true      // Метки для отладки (уберите на продакшне)
-       }
-     });
+     // mm.add("(max-width: 767px)", () => {
+     //   gsap.to(".flight__obj", {
+     //     y: -280, 
+     //     ease: "none",
+     //     scrollTrigger: {
+     //       trigger: ".flight",
+     //       start: "top bottom",
+     //       end: "bottom top",
+     //       scrub: 2
+     //     }
+     //   });
+     // });
      if ($(window).width() <= 768) {
      
          $('.features__item').on('click', function(){
@@ -72,5 +92,17 @@ $(function() {
          $(window).on('resize', function () {
              initSlick();
          });
+     $('.popup-link').fancybox({
+         // thumbs : { autoStart:true },
+         toolbar: "auto",
+         infobar: true,
+         smallBtn: "auto",
+         protect: true,
+         loop: true,
+         iframe : {
+             preload : false
+         },
+         closeExisting : true
+     });
 
 });
