@@ -26,15 +26,21 @@
         margin-right: auto;
         font-size: 18px;
         color: @text2;
+        margin-bottom: 20px;
 
         .md-block({
-            margin-bottom: 20px;
             font-size: 15px;
         })
     }
 
-    &__obj1 {
+    &__obj {
+        position: relative;
+        left: -500px;
         will-change: transform;
+
+        .md-block({
+            left: 0;
+        });
     }
 
     &__form {

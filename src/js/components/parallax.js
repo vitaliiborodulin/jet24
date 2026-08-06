@@ -4,7 +4,7 @@ const mm = gsap.matchMedia();
 
 mm.add("(min-width: 768px)", () => {
   gsap.from(".hero__obj", {
-    x: 1500, 
+    x: 2000, 
     ease: "none",
     scrollTrigger: {
       trigger: ".hero",
@@ -18,7 +18,7 @@ mm.add("(min-width: 768px)", () => {
 
 mm.add("(max-width: 767px)", () => {
   gsap.from(".hero__obj", {
-      x: 400, 
+      x: 300, 
       ease: "none",
       scrollTrigger: {
         trigger: ".hero",
