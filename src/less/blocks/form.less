@@ -1,0 +1,136 @@
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 16px;
+    text-align: left;
+
+    .md-block({
+        gap: 8px;
+    });
+    
+    &__box {
+        width: 100%;
+        padding: 24px 20px;
+        border-radius: 4px;
+        background-color: rgba(252, 250, 244, 0.3);
+        backdrop-filter: blur(10px);
+
+        .md-block({
+            padding: 16px;
+        });
+    }
+
+    &__item {
+        position: relative;
+        // flex-basis: 230px;
+        width: 230px;
+        // flex-grow: 1;
+
+        .md-block({
+            width: 100px;
+            flex-grow: 1;
+        });
+    }
+
+    .plus, .minus {
+        position: absolute;
+        bottom: 10px;
+        // font-weight: 600;
+        font-size: 30px;
+    }
+
+    .plus {
+        right: 40px;
+    }
+
+    .minus {
+        right: 20px;
+    }
+
+    &__item:nth-child(1), 
+    &__item:nth-child(2) {
+        .md(width, 100%);
+    }
+
+    &__submit {
+        height: 50px;
+        // flex-grow: 1;
+        .md(width, 100%);
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
+        height: 50px;
+        padding: 16px 14px;
+        padding-left: 48px;
+        border: 1px solid rgba(5, 64, 66, 0.1);
+        border-radius: 4px;
+        color: @text2;
+        font-size: 14px;
+
+        background-color: @light2;
+        background-repeat: no-repeat;
+        background-position: 10px center;
+
+        .md-block({
+            padding: 12px 14px;
+            padding-left: 38px;
+            font-size: 13px;
+        });
+
+        &:focus {
+            border: 1px solid #042627;
+        }
+    }
+
+    &__input[type="number"] {
+        padding-right: 65px;
+    }
+
+    &__input[name="land"] {
+        background-image: url(../img/land.svg);
+    }
+
+    &__input[name="cal"] {
+        background-image: url(../img/cal.svg);
+    }
+
+    &__input[name="guests"] {
+        background-image: url(../img/user.svg);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 15px;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-image: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
+
+        .md(display, none);
+    }
+}
+
+.nice-select {
+    padding-left: 48px;
+    width: 100%;
+    height: 50px;
+    line-height: 48px;
+    // background-color: @light2;
+    color: @text2;
+    font-size: 14px;
+    background: @light2 url(../img/takeoff.svg) no-repeat 14px center;
+
+    .md-block({
+        font-size: 13px;
+    });
+
+}
+
+.nice-select .option {
+    color: #042627;
+}

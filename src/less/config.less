@@ -108,6 +108,7 @@ body {
 
 main {
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .overflow {
@@ -144,6 +145,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
 }
 
 .h2 {
@@ -177,12 +179,6 @@ section .h2-box .h2 {
 
 
 
-
-
-
-
-
-/* Удаляем все анимации и переходы для людей, которые предпочитают их не использовать */
 @media (prefers-reduced-motion: reduce) {
     * {
       animation-duration: 0.01ms !important;

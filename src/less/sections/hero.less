@@ -3,7 +3,7 @@
     padding-top: 100px;
     padding-bottom: 40px;
     background: #EFE8E0 url(../img/hero-bg.jpg) no-repeat center bottom/cover;
-    overflow: hidden;
+    // overflow: hidden;
     
     &__content {
         display: flex;
@@ -14,7 +14,8 @@
         padding-top: 65px;
         
         .md-block({
-            max-height: 50vh;
+            min-height: 50vh;
+            height: auto;
             padding-top: 34px;
         });
     }
@@ -43,12 +44,9 @@
         });
     }
 
-    &__form {
+    .form__box {
         margin-top: auto;
-        width: 100%;
-        padding: 24px 20px;
-        border-radius: 4px;
-        background-color: rgba(252, 250, 244, 0.3);
-        backdrop-filter: blur(10px)
+
+        .md(margin-top, 50px);
     }
 }

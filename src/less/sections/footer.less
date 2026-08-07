@@ -1,4 +1,127 @@
 .footer {
     padding: 60px 0;
+    font-size: 14px;
     background-color: @color-plus;
+
+    .md-block({
+        padding-top: 40px;
+        padding-bottom: 5px;
+    });
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+
+        .md-block({
+            display: block;
+        });
+    }
+
+    &__left {
+        width: 295px;
+        display: flex;
+        flex-direction: column;
+
+        .md-block({
+            width: 100%;
+            // display: block;
+        });
+    }
+
+    .logo img {
+        width: 214px;
+        height: auto;
+
+        .md(width, 280px);
+    }
+
+    &__descr {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    &__develop {
+        margin-top: auto;
+
+        .md(display, none);
+
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    &__center {
+        width: 340px;
+        display: flex;
+        justify-content: space-between;
+        gap: 130px;
+
+        .md-block({
+            margin-top: 32px;
+            width: 100%;
+            // display: block;
+            justify-content: flex-start;
+            gap: 60px;
+        });
+
+    }
+
+    &__menu {
+        li + li {
+            margin-top: 14px;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__btns {
+        margin-top: 30px;
+        gap: 12px;
+    }
+
+    &__contacts {
+        margin-bottom: auto;
+
+        p {
+            margin: 0;
+        }
+
+        p + p {
+            margin-top: 14px;
+        }
+    }
+
+    &__right {
+        width: 305px;
+        display: flex;
+        flex-direction: column;
+
+        .md-block({
+            margin-top: 32px;
+            width: 100%;
+            display: block;
+        });
+
+        .btn {
+            margin-bottom: auto;
+            width: 100%;
+        }
+    }
+
+    &__copyright {
+        margin-top: 20px;
+
+        .md(display, none);
+
+         li + li {
+            margin-top: 8px;
+        }
+    }
 }

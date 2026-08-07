@@ -6,7 +6,7 @@
     font-size: 14px;
     line-height: 1;
 
-    padding: 20px 35px;
+    padding: 16px 36px;
     text-align: center;
 
     color: @light2;
@@ -16,22 +16,30 @@
     overflow: hidden;
     cursor: pointer;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     .md-block({
         font-size: 13px;
         padding: 16px 38px;
     });
 
-    &::after {
-        display: block;
-        position: absolute;
-        content: '';
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background-color: @light2;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
+    span {
+        position: relative;
+
+        &::after {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: @light2;
+            right: -16px;
+            top: 50%;
+            margin-top: -3px;
+        }
     }
 
     &::before {
@@ -50,4 +58,35 @@
     &:focus::before {
         opacity: 1;
     }
+}
+
+.btn-online {
+    padding-right: 52px;
+}
+
+.btn-o {
+    background: transparent;
+    border: 1px solid rgba(5, 64, 66, 0.1);
+
+    color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
+    background-image: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: #fff;
+    }
+
+    span::after {
+        background: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
+    }
+
+    &:hover span::after,
+    &:active span::after,
+    &:focus span::after {
+        background: #fff;
+    }
+
 }
