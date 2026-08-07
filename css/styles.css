@@ -288,6 +288,7 @@ body {
 
 main {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .overflow {
@@ -317,6 +318,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
 }
 
 .h2 {
@@ -343,8 +345,6 @@ section .h2-box .h2 {
   background-clip: text;
   background-image: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
 }
-
-/* Удаляем все анимации и переходы для людей, которые предпочитают их не использовать */
 
 *:focus:not(:focus-visible) {
   outline: none !important;
@@ -450,16 +450,23 @@ input[type='submit'] {
   border-radius: 4px;
   font-size: 14px;
   line-height: 1;
-  padding: 20px 35px;
+  padding: 16px 36px;
   text-align: center;
   color: #FCFAF4;
   background: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
   z-index: 1;
   overflow: hidden;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.btn::after {
+.btn span {
+  position: relative;
+}
+
+.btn span::after {
   display: block;
   position: absolute;
   content: '';
@@ -467,10 +474,9 @@ input[type='submit'] {
   height: 6px;
   border-radius: 50%;
   background-color: #FCFAF4;
-  right: 20px;
+  right: -16px;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  margin-top: -3px;
 }
 
 .btn::before {
@@ -490,6 +496,10 @@ input[type='submit'] {
   opacity: 1;
 }
 
+.btn-online {
+  padding-right: 52px;
+}
+
 .btn-o {
   background: transparent;
   border: 1px solid rgba(5, 64, 66, 0.1);
@@ -505,13 +515,13 @@ input[type='submit'] {
   color: #fff;
 }
 
-.btn-o::after {
+.btn-o span::after {
   background: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
 }
 
-.btn-o:hover::after,
-.btn-o:active::after,
-.btn-o:focus::after {
+.btn-o:hover span::after,
+.btn-o:active span::after,
+.btn-o:focus span::after {
   background: #fff;
 }
 
@@ -556,6 +566,144 @@ input[type='submit'] {
   display: flex;
   gap: 8px;
   align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 16px;
+  text-align: left;
+}
+
+.form__box {
+  width: 100%;
+  padding: 24px 20px;
+  border-radius: 4px;
+  background-color: rgba(252, 250, 244, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.form__item {
+  position: relative;
+  width: 230px;
+}
+
+.form .plus,
+.form .minus {
+  position: absolute;
+  bottom: 10px;
+  font-size: 30px;
+}
+
+.form .plus {
+  right: 40px;
+}
+
+.form .minus {
+  right: 20px;
+}
+
+.form__submit {
+  height: 50px;
+}
+
+.form__input {
+  display: block;
+  width: 100%;
+  height: 50px;
+  padding: 16px 14px;
+  padding-left: 48px;
+  border: 1px solid rgba(5, 64, 66, 0.1);
+  border-radius: 4px;
+  color: rgba(24, 24, 24, 0.7);
+  font-size: 14px;
+  background-color: #FCFAF4;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+.form__input:focus {
+  border: 1px solid #042627;
+}
+
+.form__input[type="number"] {
+  padding-right: 65px;
+}
+
+.form__input[name="land"] {
+  background-image: url(../img/land.svg);
+}
+
+.form__input[name="cal"] {
+  background-image: url(../img/cal.svg);
+}
+
+.form__input[name="guests"] {
+  background-image: url(../img/user.svg);
+}
+
+.form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
+}
+
+.nice-select {
+  padding-left: 48px;
+  width: 100%;
+  height: 50px;
+  line-height: 48px;
+  color: rgba(24, 24, 24, 0.7);
+  font-size: 14px;
+  background: #FCFAF4 url(../img/takeoff.svg) no-repeat 14px center;
+}
+
+.nice-select .option {
+  color: #042627;
+}
+
+.flatpickr-day {
+  color: rgba(24, 24, 24, 0.7);
+}
+
+span.flatpickr-weekday {
+  color: #181818;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected.inRange,
+.flatpickr-day.startRange.inRange,
+.flatpickr-day.endRange.inRange,
+.flatpickr-day.selected:focus,
+.flatpickr-day.startRange:focus,
+.flatpickr-day.endRange:focus,
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover,
+.flatpickr-day.selected.prevMonthDay,
+.flatpickr-day.startRange.prevMonthDay,
+.flatpickr-day.endRange.prevMonthDay,
+.flatpickr-day.selected.nextMonthDay,
+.flatpickr-day.startRange.nextMonthDay,
+.flatpickr-day.endRange.nextMonthDay {
+  background: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
+  border-radius: 4px;
+  border: none;
+}
+
+.flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)),
+.flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)),
+.flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n+1)) {
+  box-shadow: -10px 0 0 #E4E7E1;
 }
 
 .arrows {
@@ -620,7 +768,6 @@ input[type='submit'] {
   padding-top: 100px;
   padding-bottom: 40px;
   background: #EFE8E0 url(../img/hero-bg.jpg) no-repeat center bottom / cover;
-  overflow: hidden;
 }
 
 .hero__content {
@@ -648,14 +795,8 @@ input[type='submit'] {
   will-change: transform;
 }
 
-.hero__form {
+.hero .form__box {
   margin-top: auto;
-  width: 100%;
-  padding: 24px 20px;
-  border-radius: 4px;
-  background-color: rgba(252, 250, 244, 0.3);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
 }
 
 .about {
@@ -1087,10 +1228,6 @@ input[type='submit'] {
   will-change: transform;
 }
 
-.contact {
-  min-height: 700px;
-}
-
 .footer {
   padding: 60px 0;
   font-size: 14px;
@@ -1147,8 +1284,12 @@ input[type='submit'] {
 }
 
 .footer__btns {
-  margin-top: auto;
+  margin-top: 30px;
   gap: 12px;
+}
+
+.footer__contacts {
+  margin-bottom: auto;
 }
 
 .footer__contacts p {
@@ -1209,6 +1350,42 @@ input[type='submit'] {
     height: 40px;
   }
 
+  .form {
+    gap: 8px;
+  }
+
+  .form__box {
+    padding: 16px;
+  }
+
+  .form__item {
+    width: 100px;
+    flex-grow: 1;
+  }
+
+  .form__item:nth-child(1),
+  .form__item:nth-child(2) {
+    width: 100%;
+  }
+
+  .form__submit {
+    width: 100%;
+  }
+
+  .form__input {
+    padding: 12px 14px;
+    padding-left: 38px;
+    font-size: 13px;
+  }
+
+  .form label {
+    display: none;
+  }
+
+  .nice-select {
+    font-size: 13px;
+  }
+
   .header {
     padding: 16px 0;
   }
@@ -1229,8 +1406,13 @@ input[type='submit'] {
     display: none;
   }
 
+  .header .popup-link {
+    display: none;
+  }
+
   .hero__content {
-    max-height: 50vh;
+    min-height: 50vh;
+    height: auto;
     padding-top: 34px;
   }
 
@@ -1240,6 +1422,10 @@ input[type='submit'] {
 
   .hero__obj {
     left: 0;
+  }
+
+  .hero .form__box {
+    margin-top: 50px;
   }
 
   .about {

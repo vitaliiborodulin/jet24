@@ -11,6 +11,8 @@
 
 	<link rel="stylesheet" href="css/slick.css">
 	<link rel="stylesheet" href="css/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="css/nice-select.css">
+	<link rel="stylesheet" href="css/flatpickr.min.css">
 	<link rel="stylesheet" href="css/styles.css?v=5">
 </head>
 
@@ -61,7 +63,7 @@
 	                        </defs>
 	                    </svg>
 	                </a>
-	                <a href="javascript:;" class="btn btn-o popup-link" data-src="#request">Request a flight</a>
+	                <a href="javascript:;" class="btn btn-o popup-link btn-online" data-src="#request"><span>Request a flight</span></a>
 	            </div>
 	
 	        </div>
@@ -73,12 +75,47 @@
 		<section class="hero">
 		    <div class="container"> 
 		        <div class="hero__content">
+		
 		            <h1 class="h1">The Private Way <span class="accent">to Fly</span></h1>
 		            <div class="hero__descr">Charter flights, aircraft management and exclusive aviation services worldwide.</div>
+		
 		            <img class="hero__obj" src="img/hero-aircraft.png" alt="">
-		            <form class="hero__form">
-		                header form
-		            </form>
+		
+		            <div class="form__box">
+		                <form class="form" method="post">
+		
+		                    <div class="form__item form__item-takeoff">
+		                        <label for="takeoff">From</label>
+		                        <select name="from" id="takeoff" class="form__select">
+		                            <!-- <option data-display="Dubai">Dubai</option> -->
+		                            <option value="Dubai">Dubai</option>
+		                            <option value="Istanbul">Istanbul</option>
+		                            <option value="Yerevan">Yerevan</option>
+		                            <option value="Larnaca">Larnaca</option>
+		                        </select>
+		                    </div>
+		
+		                    <div class="form__item">
+		                        <label for="land">To</label>
+		                        <input class="form__input" type="text" name="land" id="land" placeholder="Riyadh" autocomplete="off">
+		                    </div>
+		
+		                    <div class="form__item">
+		                        <label for="cal">Date</label>
+		                        <input class="form__input cal" type="text" name="cal" id="cal" placeholder="10-12 Aug">
+		                    </div>
+		
+		                    <div class="form__item">
+		                        <label for="guests">Passengers</label>
+		                        <input type="number" class="form__input" name="guests" id="guests" value="1" min="1" >
+		                        <button type="button" class="minus">-</button>
+		                        <button type="button" class="plus">+</button>
+		                    </div>
+		                    
+		                    <button class="btn form__submit" type="submit">Request a flight</button>
+		                </form>
+		            </div>
+		
 		        </div>
 		    </div>
 		</section>
@@ -89,7 +126,7 @@
 		            <div class="about__text">
 		                <h2 class="h2">About <span class="accent">JET24</span></h2>
 		                <div class="about__descr">JET24 Global is a private aviation group operating worldwide — charter flights, aircraft sales, management, and concierge services. <b>Our own dispatch and flight control center ensures every flight runs seamlessly, 24/7.</b></div>
-		                <a href="javascript:;" class="btn about__btn popup-link" data-src="#request">Discover our services</a>
+		                <a href="javascript:;" class="btn about__btn btn-online popup-link" data-src="#request"><span>Discover our services</span></a>
 		            </div>
 		        </div>
 		
@@ -283,7 +320,7 @@
 		            <div class="guidance__top">Your Journey Starts Here</div>
 		            <h2 class="h2">Expert Guidance. <span class="accent">Tailored Charter Solutions.</span></h2>
 		            <div class="guidance__bottom">Speak directly with our private aviation team and receive a custom flight proposal within minutes, anytime.</div>
-		            <a href="javascript:;" class="btn guidance__btn popup-link" data-src="#request">Request your quote</a>
+		            <a href="javascript:;" class="btn guidance__btn btn-online popup-link" data-src="#request"><span>Request your quote</span></a>
 		        </div>
 		    </div>
 		</section>
@@ -324,6 +361,39 @@
 		<section class="contact" id="contact">
 		    <div class="container">
 		        <h2 class="h2">Contact Form</h2>
+		
+		        <!-- <form class="form hero__form">
+		
+		            <div class="form__box">
+		                <label for="from">From</label>
+		                <select name="from" id="from" class="form__select">
+		                    <option data-display="Dubai">Dubai</option>
+		                    <option value="Istanbul">Istanbul</option>
+		                    <option value="Yerevan">Yerevan</option>
+		                    <option value="Larnaca">Larnaca</option>
+		                </select>
+		            </div>
+		
+		            <div class="form__box">
+		                <label for="to">To</label>
+		                <input class="form__input" type="text" name="to" id="to" placeholder="Riyadh">
+		            </div>
+		
+		            <div class="form__box">
+		                <label for="cal">Date</label>
+		                <input class="form__input cal" type="text" name="cal" id="cal" placeholder="10-12 Aug">
+		            </div>
+		
+		            <div class="form__box">
+		                <label for="pass">Passengers</label>
+		                <input type="number" class="form__input" id="guests" value="1" min="1" readonly>
+		                <button type="button" id="minus">-</button>
+		                <button type="button" id="plus">+</button>
+		            </div>
+		            
+		            <!-- <button class="btn form__submit" type="submit">Request a flight</button> -->
+		        </form> -->
+		
 		    </div>
 		</section>
 		
@@ -363,10 +433,10 @@
 	
 	                <div class="footer__wrap">
 	
-	                    <div class="footer__contants">
+	                    <div class="footer__contacts">
 	                        <p><a href="tel:+971563808973">+971 56 380 8973</a></p>
 	                        <p><a href="mailto:Jet24@gmail.com">Jet24@gmail.com</a></p>
-	                        <p>Dubai, Contact Contact Contact Contact</p>
+	                        <p>Dubai</p>
 	                    </div>
 	
 	                    <div class="footer__btns soc__btns">
@@ -404,7 +474,7 @@
 	            </div>
 	
 	            <div class="footer__right">
-	                <a href="javascript:;" class="btn btn-o popup-link" data-src="#request">Request a flight</a>
+	                <a href="javascript:;" class="btn btn-o btn-online popup-link" data-src="#request"><span>Request a flight</span></a>
 	
 	                <ul class="footer__menu footer__copyright">
 	                    <li><a href="#">Privacy Policy</a></li>
@@ -438,6 +508,8 @@
 	<script src="js/jquery-3.7.1.min.js"></script>
 	<script src="js/jquery.fancybox.min.js"></script>
 	<script src="js/slick.min.js"></script>
+	<script src="js/jquery.nice-select.min.js"></script>
+	<script src="js/flatpickr.min.js"></script>
 	<script src="js/scripts.js?v=4"></script>
 	<!-- end scripts -->
 
