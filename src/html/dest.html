@@ -1,5 +1,96 @@
-<section class="dest">
+<section class="dest" id="dest">
     <div class="container">
-        destinations
+
+        <div class="dest__content">
+
+            <div class="dest__list">
+
+                <div class="dest__item">
+                    <div class="dest__text">
+                        <div class="dest__subtitle">Popular Destinations</div>
+                        <div class="dest__title">Dubai</div>
+                    </div>
+                    <picture>
+                        <source srcset="img/dest-4-m.svg" media="(max-width: 400px)">
+                        <img src="img/dest-4.png" alt="">
+                    </picture>
+                </div>
+
+                <div class="dest__item">
+                    <div class="dest__text">
+                        <div class="dest__subtitle">Popular Destinations</div>
+                        <div class="dest__title">Larnaca</div>
+                    </div>
+                    <picture>
+                        <source srcset="img/dest-4-m.svg" media="(max-width: 400px)">
+                        <img src="img/dest-1.png" alt="">
+                    </picture>
+                </div>
+
+                <div class="dest__item">
+                    <div class="dest__text">
+                        <div class="dest__subtitle">Popular Destinations</div>
+                        <div class="dest__title">Yerevan</div>
+                    </div>
+                    <picture>
+                        <source srcset="img/dest-4-m.svg" media="(max-width: 400px)">
+                        <img src="img/dest-4.svg" alt="">
+                    </picture>
+                </div>
+
+                <div class="dest__item">
+                    <div class="dest__text">
+                        <div class="dest__subtitle">Popular Destinations</div>
+                        <div class="dest__title">Istanbul</div>
+                    </div>
+                    <picture>
+                        <source srcset="img/dest-4-m.svg" media="(max-width: 400px)">
+                        <img src="img/dest-4.svg" alt="">
+                    </picture>
+                </div>
+
+            </div>
+
+            <div class="arrows">
+                <div class="arrow arrow-o arrow-prev">Prev</div>
+                <div class="arrow arrow-o arrow-next">Next</div>
+            </div>
+
+            <div class="form__box">
+                <form class="form" method="post">
+
+                    <div class="form__item form__item-takeoff">
+                        <label for="takeoff">From</label>
+                        <select name="from" id="takeoff" class="form__select">
+                            <option value="Dubai">Dubai</option>
+                            <option value="Istanbul">Istanbul</option>
+                            <option value="Yerevan">Yerevan</option>
+                            <option value="Larnaca">Larnaca</option>
+                        </select>
+                    </div>
+
+                    <div class="form__item">
+                        <label for="land">To</label>
+                        <input class="form__input" type="text" name="land" id="land" placeholder="Riyadh" autocomplete="off">
+                    </div>
+
+                    <div class="form__item">
+                        <label for="cal">Date</label>
+                        <input class="form__input cal" type="text" name="cal" id="cal" placeholder="10-12 Aug">
+                    </div>
+
+                    <div class="form__item">
+                        <label for="guests">Passengers</label>
+                        <input type="number" class="form__input" name="guests" id="guests" value="1" min="1" >
+                        <button type="button" class="minus">-</button>
+                        <button type="button" class="plus">+</button>
+                    </div>
+                    
+                    <button class="btn form__submit" type="submit">Request a flight</button>
+                </form>
+            </div>
+
+        </div>
+
     </div>
 </section>

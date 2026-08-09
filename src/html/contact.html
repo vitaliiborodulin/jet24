@@ -2,37 +2,47 @@
     <div class="container">
         <h2 class="h2">Contact Form</h2>
 
-        <!-- <form class="form hero__form">
+        <div class="contact__form">
+            <form class="form" method="post">
 
-            <div class="form__box">
-                <label for="from">From</label>
-                <select name="from" id="from" class="form__select">
-                    <option data-display="Dubai">Dubai</option>
-                    <option value="Istanbul">Istanbul</option>
-                    <option value="Yerevan">Yerevan</option>
-                    <option value="Larnaca">Larnaca</option>
-                </select>
-            </div>
+                <div class="form__row">
 
-            <div class="form__box">
-                <label for="to">To</label>
-                <input class="form__input" type="text" name="to" id="to" placeholder="Riyadh">
-            </div>
+                    <div class="form__item">
+                        <select name="from" id="takeoff" class="form__select">
+                            <option value="Dubai">Dubai</option>
+                            <option value="Istanbul">Istanbul</option>
+                            <option value="Yerevan">Yerevan</option>
+                            <option value="Larnaca">Larnaca</option>
+                        </select>
+                    </div>
 
-            <div class="form__box">
-                <label for="cal">Date</label>
-                <input class="form__input cal" type="text" name="cal" id="cal" placeholder="10-12 Aug">
-            </div>
+                    <div class="form__item">
+                        <input class="form__input" type="text" name="land" id="land" placeholder="Riyadh" autocomplete="off">
+                    </div>
 
-            <div class="form__box">
-                <label for="pass">Passengers</label>
-                <input type="number" class="form__input" id="guests" value="1" min="1" readonly>
-                <button type="button" id="minus">-</button>
-                <button type="button" id="plus">+</button>
-            </div>
-            
-            <!-- <button class="btn form__submit" type="submit">Request a flight</button> -->
-        </form> -->
+                    <div class="form__item">
+                        <input class="form__input cal" type="text" name="cal" id="cal" placeholder="10-12 Aug">
+                    </div>
+
+                    <div class="form__item">
+                        <input type="number" class="form__input" name="guests" id="guests" value="1" min="1" >
+                        <button type="button" class="minus">-</button>
+                        <button type="button" class="plus">+</button>
+                    </div>
+
+                </div>
+                <div class="form__row">
+
+                    <div class="form__item">
+                        <input class="form__input" type="text" name="name" id="name" placeholder="First name*" required>
+                    </div>
+                    
+                </div>
+
+                
+                <!-- <button class="btn form__submit" type="submit">Request a flight</button> -->
+            </form>
+        </div>
 
     </div>
 </section>

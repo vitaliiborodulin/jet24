@@ -6,14 +6,24 @@
 
 
 .arrow {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
     padding: 10px;
     border: 1px solid #0540421A;
     border-radius: 4px;
     background: url(../img/arrow-prev.svg) no-repeat center;
     font-size: 0;
     cursor: pointer;
+
+    .md-block({
+        width: 32px;
+        height: 32px;
+    });
+}
+
+.arrow-o {
+    border: 1px solid rgba(244, 243, 238, 0.1);
+    background: url(../img/arrow-prev-w.svg) no-repeat center;
 }
 
 .arrow-next {
