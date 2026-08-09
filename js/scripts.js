@@ -91,9 +91,6 @@ $(function() {
      
      initFeaturesSlider();
      
-     $(window).on('resize', function () {
-         initFeaturesSlider();
-     });
      
      // teamslider
      
@@ -119,8 +116,63 @@ $(function() {
      
      initTeamSlider();
      
+     // fleet slider
+     
+     const fleetSlider = $('.fleet__list');
+     
+     fleetSlider.slick({
+         slidesToShow: 1,
+         slidesToScroll: 1,
+         swipe: false,
+         touchMove: false,
+         draggable: false,
+         swipeToSlide: false,
+         fade: true,
+         nextArrow: $('.fleet .arrow-next'),
+         prevArrow: $('.fleet .arrow-prev'),
+     });
+     
+     const fleetTableSlider = $('.fleet__table');
+     
+     function initFleetTableSlider() {
+         if ($(window).width() <= 768) {
+             if (!fleetTableSlider.hasClass('slick-initialized')) {
+                 fleetTableSlider.slick({
+                     slidesToShow: 1,
+                     slidesToScroll: 1,
+                     variableWidth: true,
+                     arrows: false,
+                     infinite: false
+                 });
+             }
+         } else {
+             if (fleetTableSlider.hasClass('slick-initialized')) {
+                 fleetTableSlider.slick('unslick');
+             }
+         }
+     }
+     
+     initFleetTableSlider();
+     
+     // destinations slider
+     
+     const destSlider = $('.dest__list');
+     
+     destSlider.slick({
+         slidesToShow: 1,
+         slidesToScroll: 1,
+         draggable: false,
+         fade: true,
+         nextArrow: $('.dest .arrow-next'),
+         prevArrow: $('.dest .arrow-prev'),
+     });
+     
+     
+     
      $(window).on('resize', function () {
+         initFeaturesSlider();
          initTeamSlider();
+         initFleetTableSlider();
      });
      $('.popup-link').fancybox({
          // thumbs : { autoStart:true },

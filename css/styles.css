@@ -275,6 +275,15 @@ textarea {
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Unbounded';
+  src: url('../fonts/Unbounded-Medium.eot');
+  src: url('../fonts/Unbounded-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/Unbounded-Medium.woff2') format('woff2'), url('../fonts/Unbounded-Medium.woff') format('woff'), url('../fonts/Unbounded-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   position: relative;
   font-family: 'Inter', sans-serif;
@@ -457,9 +466,6 @@ input[type='submit'] {
   z-index: 1;
   overflow: hidden;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .btn span {
@@ -476,7 +482,7 @@ input[type='submit'] {
   background-color: #FCFAF4;
   right: -16px;
   top: 50%;
-  margin-top: -3px;
+  margin-top: -2px;
 }
 
 .btn::before {
@@ -713,14 +719,19 @@ span.flatpickr-weekday {
 }
 
 .arrow {
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
   padding: 10px;
   border: 1px solid #0540421A;
   border-radius: 4px;
   background: url(../img/arrow-prev.svg) no-repeat center;
   font-size: 0;
   cursor: pointer;
+}
+
+.arrow-o {
+  border: 1px solid rgba(244, 243, 238, 0.1);
+  background: url(../img/arrow-prev-w.svg) no-repeat center;
 }
 
 .arrow-next {
@@ -1084,6 +1095,149 @@ span.flatpickr-weekday {
   background-image: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
 }
 
+.fleet__pic {
+  position: relative;
+  padding: 20px;
+  background: url(../img/fleet-bg.png) no-repeat center / contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fleet__pic img {
+  position: relative;
+  z-index: 1;
+  height: 600px;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.fleet__pic img:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+.fleet__pic .circle {
+  position: absolute;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  left: 50%;
+  top: 50%;
+  margin-left: -20px;
+  margin-top: -20px;
+  border: 1px solid rgba(24, 24, 24, 0.3);
+  border-radius: 50%;
+  -webkit-animation: radar 2s infinite;
+          animation: radar 2s infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.fleet__pic .circle-2 {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+@-webkit-keyframes radar {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: scale(7.5);
+            transform: scale(7.5);
+    opacity: 0;
+  }
+}
+
+@keyframes radar {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: scale(7.5);
+            transform: scale(7.5);
+    opacity: 0;
+  }
+}
+
+.fleet__pic:hover .circle-1,
+.fleet__pic:hover .circle-2 {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.fleet__name {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+}
+
+.fleet .container {
+  position: relative;
+}
+
+.fleet__text {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  max-width: 310px;
+}
+
+.fleet .h2 {
+  margin-bottom: 0;
+}
+
+.fleet__descr {
+  margin-top: 24px;
+}
+
+.fleet .arrows {
+  position: absolute;
+  top: 200px;
+  z-index: 3;
+}
+
+.fleet__btn {
+  padding: 20px 70px;
+  position: absolute;
+  right: 20px;
+  top: 0;
+}
+
+.fleet__table {
+  margin-top: 32px;
+  border-top: 1px solid #DCE1DD;
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.fleet__cell {
+  width: 246px;
+  padding-left: 36px;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+.fleet__par {
+  color: rgba(24, 24, 24, 0.7);
+}
+
+.fleet__num {
+  font-weight: 500;
+}
+
 .guidance {
   font-size: 18px;
 }
@@ -1112,6 +1266,156 @@ span.flatpickr-weekday {
 .guidance__btn {
   display: inline-block;
   margin-top: 40px;
+}
+
+.dest {
+  background: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
+}
+
+.dest__content {
+  height: 782px;
+  position: relative;
+}
+
+.dest__item picture {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.dest__text {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  color: #FCFAF4;
+}
+
+.dest__subtitle {
+  margin-bottom: 24px;
+  font-size: 18px;
+}
+
+.dest__title {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.dest .arrows {
+  position: absolute;
+  top: 252px;
+  left: 0;
+  z-index: 2;
+}
+
+.dest .form__box {
+  position: absolute;
+  left: 0;
+  bottom: 60px;
+  z-index: 2;
+}
+
+.how-it-works {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #f5f4ef;
+}
+
+.how-it-works__inner {
+  position: relative;
+  height: 100vh;
+  padding: 80px 42px;
+}
+
+/* timeline */
+
+.how-it-works__timeline {
+  position: relative;
+  width: 100%;
+}
+
+.how-it-works__line {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #deded8;
+}
+
+.how-it-works__steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.how-it-works__step {
+  position: relative;
+  padding-top: 30px;
+  color: #929b9a;
+  transition: color 0.3s ease;
+}
+
+.how-it-works__dot {
+  position: absolute;
+  top: 0;
+  left: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #899796;
+  border: 4px solid #e2e4df;
+  box-sizing: content-box;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.how-it-works__step.is-active {
+  color: #092f30;
+}
+
+.how-it-works__step.is-active .how-it-works__dot {
+  background: #092f30;
+}
+
+.how-it-works__number {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-family: "Unbounded", sans-serif;
+  font-weight: 500;
+}
+
+.how-it-works__content h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.how-it-works__content p {
+  max-width: 282px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+/* plane */
+
+.how-it-works__plane {
+  position: absolute;
+  top: -24px;
+  left: 0;
+  width: 42px;
+  height: 20px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.how-it-works__plane img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .services__content {
@@ -1226,6 +1530,11 @@ span.flatpickr-weekday {
 
 .flight__obj {
   will-change: transform;
+}
+
+.contact__form .form {
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
 .footer {
@@ -1384,6 +1693,11 @@ span.flatpickr-weekday {
 
   .nice-select {
     font-size: 13px;
+  }
+
+  .arrow {
+    width: 32px;
+    height: 32px;
   }
 
   .header {
@@ -1550,6 +1864,54 @@ span.flatpickr-weekday {
     font-size: 13px;
   }
 
+  .fleet__pic img {
+    height: 300px;
+  }
+
+  .fleet__name {
+    font-size: 20px;
+  }
+
+  .fleet .container {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+
+  .fleet__text {
+    display: block;
+    max-width: 324px;
+  }
+
+  .fleet__descr {
+    margin-top: 12px;
+    font-size: 15px;
+  }
+
+  .fleet .arrows {
+    top: 450px;
+    right: 20px;
+  }
+
+  .fleet__btn {
+    top: unset;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    width: calc(100% - 40px);
+  }
+
+  .fleet__table {
+    display: block;
+    padding: 16px 0;
+    font-size: 13px;
+  }
+
+  .fleet__cell {
+    padding-right: 15px;
+    width: 130px;
+    margin-right: 5px;
+  }
+
   .guidance {
     font-size: 15px;
   }
@@ -1688,6 +2050,112 @@ span.flatpickr-weekday {
 
   .footer__copyright {
     display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .how-it-works {
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  .how-it-works__inner {
+    height: 100vh;
+    padding: 65px 0 0 49px;
+    overflow: hidden;
+  }
+
+  .how-it-works__title {
+    margin-bottom: 38px;
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .how-it-works__timeline {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+  }
+
+  /*
+   * Линия теперь шире экрана,
+   * потому что внутри находится 4 колонки.
+   */
+
+  .how-it-works__line {
+    top: 10px;
+    left: 0;
+    width: 200vw;
+  }
+
+  /*
+   * Горизонтальная лента.
+   *
+   * 4 колонки по 50vw.
+   * Поэтому одновременно видно
+   * примерно 2 колонки.
+   */
+
+  .how-it-works__steps {
+    display: grid;
+    grid-template-columns: repeat(4, 50vw);
+    width: 200vw;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    will-change: transform;
+  }
+
+  .how-it-works__step {
+    width: 50vw;
+    padding-top: 30px;
+    padding-right: 25px;
+    box-sizing: border-box;
+  }
+
+  /*
+   * Точки находятся всегда
+   * в начале каждой колонки.
+   */
+
+  .how-it-works__dot {
+    top: 4px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+
+  .how-it-works__content {
+    padding-right: 15px;
+  }
+
+  .how-it-works__number {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+
+  .how-it-works__content h3 {
+    margin-bottom: 7px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .how-it-works__content p {
+    max-width: 210px;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  /*
+   * Самолётик
+   */
+
+  .how-it-works__plane {
+    top: -7px;
+    width: 35px;
+    height: auto;
+    will-change: transform;
   }
 }
 
