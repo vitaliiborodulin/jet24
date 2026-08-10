@@ -11,21 +11,20 @@ $(function() {
          scrollTrigger: {
            trigger: ".hero",
            start: "top bottom",
-           end: "bottom top",
+           end: "bottom 60%",
            scrub: 2,
-           // markers: true
          }
        });
      });
      
      mm.add("(max-width: 767px)", () => {
        gsap.from(".hero__obj", {
-           x: 300, 
+           x: 800, 
            ease: "none",
            scrollTrigger: {
              trigger: ".hero",
              start: "top bottom",
-             end: "bottom top",
+             end: "bottom 60%",
              scrub: 2,
              // markers: true
            }
@@ -60,6 +59,21 @@ $(function() {
      //     }
      //   });
      // });
+     
+     mm.add("(min-width: 768px)", () => {
+       gsap.to(".steps__obj", {
+         x: 1000,
+         ease: "none",
+     
+         scrollTrigger: {
+           trigger: ".steps__obj",
+           start: "top 50%",
+           end: "bottom 20%",
+           scrub: 2,
+           // pin: true
+         }
+       });
+     });
      if ($(window).width() <= 768) {
      
          $('.features__item').on('click', function(){
@@ -167,12 +181,35 @@ $(function() {
          prevArrow: $('.dest .arrow-prev'),
      });
      
+     // steps slider
      
+     const stepsSlider = $('.steps__list');
+     
+     function initStepsSlider() {
+         if ($(window).width() <= 768) {
+             if (!stepsSlider.hasClass('slick-initialized')) {
+                 stepsSlider.slick({
+                     slidesToShow: 1,
+                     slidesToScroll: 1,
+                     variableWidth: true,
+                     arrows: false,
+                     infinite: false
+                 });
+             }
+         } else {
+             if (stepsSlider.hasClass('slick-initialized')) {
+                 stepsSlider.slick('unslick');
+             }
+         }
+     }
+     
+     initStepsSlider();
      
      $(window).on('resize', function () {
          initFeaturesSlider();
          initTeamSlider();
          initFleetTableSlider();
+         initStepsSlider();
      });
      $('.popup-link').fancybox({
          // thumbs : { autoStart:true },
@@ -197,7 +234,6 @@ $(function() {
      });
 
      $(document).on('click', '.plus', function () {
-          console.log(1);
           const $form = $(this).closest('.form__item');
           const $input = $form.find('.form__input');
 
@@ -216,10 +252,10 @@ $(function() {
      });
 
 
-     document.querySelectorAll("form").forEach(form => {
-          form.addEventListener("submit", event => {
-               event.preventDefault();
-          });
-     });
+     // document.querySelectorAll("form").forEach(form => {
+     //      form.addEventListener("submit", event => {
+     //           event.preventDefault();
+     //      });
+     // });
 
 });

@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="css/jquery.fancybox.min.css">
 	<link rel="stylesheet" href="css/nice-select.css">
 	<link rel="stylesheet" href="css/flatpickr.min.css">
-	<link rel="stylesheet" href="css/styles.css?v=5">
+	<link rel="stylesheet" href="css/styles.css?v=6">
 </head>
 
 <body class="home">
@@ -63,7 +63,7 @@
 	                        </defs>
 	                    </svg>
 	                </a>
-	                <a href="javascript:;" class="btn btn-o popup-link btn-online" data-src="#request"><span>Request a flight</span></a>
+	                <a href="javascript:;" class="btn btn-o popup-link btn-online" data-src="#discuss"><span>Request a flight</span></a>
 	            </div>
 	
 	        </div>
@@ -82,7 +82,7 @@
 		            <img class="hero__obj" src="img/hero-aircraft.png" alt="">
 		
 		            <div class="form__box">
-		                <form class="form" method="post">
+		                <form class="form form__row" method="post">
 		
 		                    <div class="form__item">
 		                        <label for="takeoff">From</label>
@@ -111,7 +111,8 @@
 		                        <button type="button" class="plus">+</button>
 		                    </div>
 		                    
-		                    <button class="btn form__submit" type="submit">Request a flight</button>
+		                    <!-- <button class="btn form__submit" type="submit">Request a flight</button> -->
+		                    <button class="btn form__submit popup-link" type="button" data-src="#discuss">Request a flight</button>
 		                </form>
 		            </div>
 		
@@ -125,7 +126,7 @@
 		            <div class="about__text">
 		                <h2 class="h2">About <span class="accent">JET24</span></h2>
 		                <div class="about__descr">JET24 Global is a private aviation group operating worldwide — charter flights, aircraft sales, management, and concierge services. <b>Our own dispatch and flight control center ensures every flight runs seamlessly, 24/7.</b></div>
-		                <a href="javascript:;" class="btn about__btn btn-online popup-link" data-src="#request"><span>Discover our services</span></a>
+		                <a href="javascript:;" class="btn about__btn btn-online popup-link" data-src="#discover"><span>Discover our services</span></a>
 		            </div>
 		        </div>
 		
@@ -326,7 +327,7 @@
 		            <div class="arrow arrow-next">Next</div>
 		        </div>
 		
-		        <a href="javascript:;" class="btn fleet__btn btn-online popup-link" data-src="#request"><span>Discover our services</span></a>
+		        <a href="javascript:;" class="btn fleet__btn btn-online popup-link" data-src="#discover"><span>Discover our services</span></a>
 		
 		        <div class="fleet__list">
 		
@@ -427,7 +428,7 @@
 		            <div class="guidance__top">Your Journey Starts Here</div>
 		            <h2 class="h2">Expert Guidance. <span class="accent">Tailored Charter Solutions.</span></h2>
 		            <div class="guidance__bottom">Speak directly with our private aviation team and receive a custom flight proposal within minutes, anytime.</div>
-		            <a href="javascript:;" class="btn guidance__btn btn-online popup-link" data-src="#request"><span>Request your quote</span></a>
+		            <a href="javascript:;" class="btn guidance__btn btn-online popup-link" data-src="#discuss"><span>Request your quote</span></a>
 		        </div>
 		    </div>
 		</section>
@@ -435,6 +436,34 @@
 
 		
 		
+		<section class="steps">
+		    <div class="container">
+		        <h2 class="h2">How it Works</h2>
+		
+		        <img class="steps__obj" src="img/plane.svg" alt="">
+		
+		        <div class="steps__list">
+		            <div class="steps__item">
+		                <h3 class="steps__title">Submit request</h3>
+		                <h3 class="steps__descr">Tell us where, when, and how many. A quick message is enough, we'll take it from there.</h3>
+		            </div>
+		            <div class="steps__item">
+		                <h3 class="steps__title">Receive options</h3>
+		                <h3 class="steps__descr">Choose what works for you and confirm. We handle all documentation, permits, and coordination.</h3>
+		            </div>
+		            <div class="steps__item">
+		                <h3 class="steps__title">Specify any special requests</h3>
+		                <h3 class="steps__descr">Catering, ground transfer, hotel, tickets, security — anything you need on the ground or in the air. Just ask.</h3>
+		            </div>
+		            <div class="steps__item">
+		                <h3 class="steps__title">Enjoy the journey</h3>
+		                <h3 class="steps__descr">Board, relax, and fly. We stay with you from takeoff to your final destination and beyond.</h3>
+		            </div>
+		
+		        </div>
+		
+		    </div>
+		</section>
 		<section class="safety" id="safety">
 		    <div class="container">
 		        <h2 class="h2">Your privacy. Our guarantee.</h2>
@@ -472,45 +501,7 @@
 		        <h2 class="h2">Contact Form</h2>
 		
 		        <div class="contact__form">
-		            <form class="form" method="post">
-		
-		                <div class="form__row">
-		
-		                    <div class="form__item">
-		                        <select name="from" id="takeoff" class="form__select">
-		                            <option value="Dubai">Dubai</option>
-		                            <option value="Istanbul">Istanbul</option>
-		                            <option value="Yerevan">Yerevan</option>
-		                            <option value="Larnaca">Larnaca</option>
-		                        </select>
-		                    </div>
-		
-		                    <div class="form__item">
-		                        <input class="form__input" type="text" name="land" id="land" placeholder="Riyadh" autocomplete="off">
-		                    </div>
-		
-		                    <div class="form__item">
-		                        <input class="form__input cal" type="text" name="cal" id="cal" placeholder="10-12 Aug">
-		                    </div>
-		
-		                    <div class="form__item">
-		                        <input type="number" class="form__input" name="guests" id="guests" value="1" min="1" >
-		                        <button type="button" class="minus">-</button>
-		                        <button type="button" class="plus">+</button>
-		                    </div>
-		
-		                </div>
-		                <div class="form__row">
-		
-		                    <div class="form__item">
-		                        <input class="form__input" type="text" name="name" id="name" placeholder="First name*" required>
-		                    </div>
-		                    
-		                </div>
-		
-		                
-		                <!-- <button class="btn form__submit" type="submit">Request a flight</button> -->
-		            </form>
+		            
 		        </div>
 		
 		    </div>
@@ -593,7 +584,7 @@
 	            </div>
 	
 	            <div class="footer__right">
-	                <a href="javascript:;" class="btn btn-o btn-online popup-link" data-src="#request"><span>Request a flight</span></a>
+	                <a href="javascript:;" class="btn btn-o btn-online popup-link" data-src="#discuss"><span>Request a flight</span></a>
 	
 	                <ul class="footer__menu footer__copyright">
 	                    <li><a href="#">Privacy Policy</a></li>
@@ -605,21 +596,52 @@
 	        </div>
 	    </div>
 	</footer>
-	<div style="display: none;" class="popup" id="request">
-	    <form class="popup__form">
-	        <div class="page__h1 popup__title">Заявка на услугу</div>
-	        <div class="popup__subtitle">Если хотите оценить сумку, приложите ее фото в хорошем качестве и в разных ракурсах: фас, анфас, внутренность, карманы, швы, гравировки, ручки, штампы, номер.</div>
-	        <p><input type="text" class="form__input" name="your-name" placeholder="Имя*" required></p>
-	        <p><input type="tel" class="form__input" name="your-tel" placeholder="Телефон*" required></p>
-	        <p><input type="email" class="form__input" name="your-email" placeholder="Email*" required></p>
-	        <p><textarea class="form__input" name="your-text" placeholder="Текст заявки"></textarea></p>
-	        <p>
-	            <label for="myfile" class="form__label">Выберите несколько фото</label>
-	            <input type="file" id="myfile" name="myfile" multiple>
-	        </p>
-	        <button type="submit" class="btn form__submit">Отправить заявку</button>
-	        <div class="popup__bottom">Нажимая на кнопку, я соглашаюсь на обработку персональных данных для возможности оформления Заявки. <a href="privacy.html">Политика конфиденциальности</a></div>
+	<div style="display: none;" class="popup" id="discover">
+	    <div class="popup__title">Discover our services</div>
+	    <form class="form popup__form">
+	        <div class="form__row">
+	            <input class="form__input" type="tel" name="phone" placeholder="Phone">
+	            <input class="form__input" type="text" name="last" placeholder="Last name">
+	            <input class="form__input" type="email" name="email" placeholder="Email*" required>
+	            <input class="form__input" type="text" name="phone" placeholder="First name*" required>
+	        </div>
+	        <div class="form__row">
+	            <div class="form__item">
+	                <label for="message1">Any additional requests that we may assist you with?</label>
+	                <textarea class="form__input" name="message" id="message1" placeholder="Enter text"></textarea>
+	            </div>
+	        </div>
+	        <!-- <button class="btn" type="submit">Submit</button> -->
+	         <button class="btn popup-link" type="button" data-src="#success">Submit</button>
 	    </form>
+	</div>
+	
+	<div style="display: none;" class="popup" id="discuss">
+	    <div class="popup__title">Discuss Your Flight Requirements</div>
+	    <form class="form popup__form">
+	        <div class="form__row">
+	            <input class="form__input" type="tel" name="phone" placeholder="Phone">
+	            <input class="form__input" type="text" name="last" placeholder="Last name">
+	            <input class="form__input" type="email" name="email" placeholder="Email*" required>
+	            <input class="form__input" type="text" name="phone" placeholder="First name*" required>
+	        </div>
+	        <div class="form__row">
+	            <div class="form__item">
+	                <label for="message2">Message</label>
+	                <textarea class="form__input" name="message" id="message2" placeholder="Enter text"></textarea>
+	            </div>
+	        </div>
+	        <!-- <button class="btn" type="submit">Submit</button> -->
+	        <button class="btn popup-link" type="button" data-src="#success">Submit</button>
+	    </form>
+	</div>
+	
+	<div style="display: none;" class="popup" id="success">
+	    <div class="popup__form tac">
+	        <div class="popup__title">Request received</div>
+	        <div class="popup__subtitle">Thank you for your request. Your personal flight advisor will contact you shortly to confirm the details and prepare a tailored offer.</div>
+	        <a href="#" class="btn" onclick="$.fancybox.close(); return false;">Close</a>
+	    </div>
 	</div>
 	<!-- scripts -->
 	<script src="js/gsap.min.js"></script>
@@ -629,7 +651,7 @@
 	<script src="js/slick.min.js"></script>
 	<script src="js/jquery.nice-select.min.js"></script>
 	<script src="js/flatpickr.min.js"></script>
-	<script src="js/scripts.js?v=4"></script>
+	<script src="js/scripts.js?v=5"></script>
 	<!-- end scripts -->
 
 </body>
