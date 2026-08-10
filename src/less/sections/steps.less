@@ -1,221 +1,114 @@
-.how-it-works {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-  background: #f5f4ef;
-}
+.steps {
 
-.how-it-works__inner {
-  position: relative;
-  height: 100vh;
-  padding: 80px 42px;
-}
-
-// .how-it-works__title {
-//   margin: 0 0 30px;
-//   font-size: 28px;
-//   line-height: 1;
-// }
-
-/* timeline */
-
-.how-it-works__timeline {
-  position: relative;
-  width: 100%;
-}
-
-.how-it-works__line {
-  position: absolute;
-  top: 10px;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: #deded8;
-}
-
-.how-it-works__steps {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.how-it-works__step {
-  position: relative;
-  padding-top: 30px;
-  color: #929b9a;
-  transition: color 0.3s ease;
-}
-
-.how-it-works__dot {
-  position: absolute;
-//   top: 4px;
-  top: 0;
-//   left: 0;
-  left: 6px;
-
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-
-  background: #899796;
-  border: 4px solid #e2e4df;
-  box-sizing: content-box;
-
-  transform: translate(-50%, 0);
-}
-
-.how-it-works__step.is-active {
-  color: #092f30;
-}
-
-.how-it-works__step.is-active .how-it-works__dot {
-  background: #092f30;
-}
-
-.how-it-works__number {
-    margin-bottom: 20px;
-    font-size: 20px;
-    font-family: "Unbounded", sans-serif;
-    font-weight: 500;
-}
-
-.how-it-works__content h3 {
-  margin: 0 0 8px;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.how-it-works__content p {
-  max-width: 282px;
-  margin: 0;
-
-  font-size: 16px;
-  line-height: 1.2;
-}
-
-/* plane */
-
-.how-it-works__plane {
-  position: absolute;
-  top: -24px;
-  left: 0;
-
-  width: 42px;
-  height: 20px;
-
-  z-index: 2;
-  pointer-events: none;
-}
-
-.how-it-works__plane img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-@media (max-width: 767px) {
-
-  .how-it-works {
-    min-height: 100vh;
-    overflow: hidden;
+  .h2 {
+    margin-bottom: 67px;
+    .md(margin-bottom, 30px);
   }
 
-  .how-it-works__inner {
-    height: 100vh;
-    padding: 65px 0 0 49px;
-    overflow: hidden;
-  }
-
-  .how-it-works__title {
-    margin-bottom: 38px;
-    font-size: 22px;
-    line-height: 1;
-  }
-
-  .how-it-works__timeline {
+  &__list {
     position: relative;
-    width: 100%;
-    overflow: visible;
+    display: flex;
+    gap: 40px;
+    counter-reset: steps 0;
+    // border-top: 1px solid #DCE1DD;
+
+    &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: #DCE1DD;
+      left: 0;
+      top: 0;
+      z-index: -1;
+
+      .md-block({
+        display: block;
+        top: 10px;
+      });
+    }
+
+    .md-block({
+      display: block;
+    });
   }
 
-  /*
-   * Линия теперь шире экрана,
-   * потому что внутри находится 4 колонки.
-   */
-  .how-it-works__line {
-    top: 10px;
-    left: 0;
-    width: 200vw;
+  &__item {
+    padding-top: 90px;
+    position: relative;
+    opacity: 0.7;
+
+    counter-increment: steps 1;
+    transition: opacity 0.3s ease;
+
+    .md-block({
+      padding-top: 55px;
+      width: 270px;
+      margin-right: 20px;
+    });
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 47px;
+      content: "0" counter(steps);
+      color: #042627;
+      font-size: 20px;
+      font-family: "Unbounded", sans-serif;
+      font-weight: 500;
+
+      .md-block({
+        top: 30px;
+        font-size: 13px;
+      });
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 24px;
+      height: 24px;
+      left: 0;
+      top: 0;
+      transform: translate(-50%, -50%);
+      background-color: #053335;
+      border: 8px solid #DCE1DD;
+      border-radius: 50%;
+
+      .md-block({
+        width: 18px;
+        height: 18px;
+        border: 6px solid #DCE1DD;
+        top: 10px;
+        left: 10px;
+      });
+    }
+
+    &.slick-active {
+      opacity: 1;
+    }
   }
 
-  /*
-   * Горизонтальная лента.
-   *
-   * 4 колонки по 50vw.
-   * Поэтому одновременно видно
-   * примерно 2 колонки.
-   */
-  .how-it-works__steps {
-    display: grid;
-    grid-template-columns: repeat(4, 50vw);
-    width: 200vw;
+  &__title {
+    font-weight: 500;
+    font-size: 20px;
 
-    transform: translateX(0);
-    will-change: transform;
+    .md(font-size, 18px);
   }
 
-  .how-it-works__step {
-    width: 50vw;
-    padding-top: 30px;
-    padding-right: 25px;
-    box-sizing: border-box;
+  &__descr {
+    margin-top: 8px;
+    font-size: 16px;
+    color: @text2;
+
+    .md(font-size, 13px);
   }
 
-  /*
-   * Точки находятся всегда
-   * в начале каждой колонки.
-   */
-  .how-it-works__dot {
-    top: 4px;
-    left: 0;
 
-    width: 10px;
-    height: 10px;
-
-    transform: translateX(-50%);
-  }
-
-  .how-it-works__content {
-    padding-right: 15px;
-  }
-
-  .how-it-works__number {
-    margin-bottom: 10px;
-    font-size: 12px;
-  }
-
-  .how-it-works__content h3 {
-    margin-bottom: 7px;
-    font-size: 14px;
-    line-height: 1.2;
-  }
-
-  .how-it-works__content p {
-    max-width: 210px;
-    font-size: 11px;
-    line-height: 1.35;
-  }
-
-  /*
-   * Самолётик
-   */
-  .how-it-works__plane {
-    top: -7px;
-
-    width: 35px;
-    height: auto;
-
-    will-change: transform;
-  }
 
 }

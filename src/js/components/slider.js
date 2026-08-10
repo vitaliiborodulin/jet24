@@ -98,10 +98,33 @@ destSlider.slick({
     prevArrow: $('.dest .arrow-prev'),
 });
 
+// steps slider
 
+const stepsSlider = $('.steps__list');
+
+function initStepsSlider() {
+    if ($(window).width() <= 768) {
+        if (!stepsSlider.hasClass('slick-initialized')) {
+            stepsSlider.slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                variableWidth: true,
+                arrows: false,
+                infinite: false
+            });
+        }
+    } else {
+        if (stepsSlider.hasClass('slick-initialized')) {
+            stepsSlider.slick('unslick');
+        }
+    }
+}
+
+initStepsSlider();
 
 $(window).on('resize', function () {
     initFeaturesSlider();
     initTeamSlider();
     initFleetTableSlider();
+    initStepsSlider();
 });

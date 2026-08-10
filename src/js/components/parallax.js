@@ -9,21 +9,20 @@ mm.add("(min-width: 768px)", () => {
     scrollTrigger: {
       trigger: ".hero",
       start: "top bottom",
-      end: "bottom top",
+      end: "bottom 60%",
       scrub: 2,
-      // markers: true
     }
   });
 });
 
 mm.add("(max-width: 767px)", () => {
   gsap.from(".hero__obj", {
-      x: 300, 
+      x: 800, 
       ease: "none",
       scrollTrigger: {
         trigger: ".hero",
         start: "top bottom",
-        end: "bottom top",
+        end: "bottom 60%",
         scrub: 2,
         // markers: true
       }
@@ -58,4 +57,19 @@ mm.add("(max-width: 767px)", () => {
 //     }
 //   });
 // });
+
+mm.add("(min-width: 768px)", () => {
+  gsap.to(".steps__obj", {
+    x: 1000,
+    ease: "none",
+
+    scrollTrigger: {
+      trigger: ".steps__obj",
+      start: "top 50%",
+      end: "bottom 20%",
+      scrub: 2,
+      // pin: true
+    }
+  });
+});
 

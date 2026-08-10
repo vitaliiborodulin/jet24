@@ -15,7 +15,6 @@ $(function() {
      });
 
      $(document).on('click', '.plus', function () {
-          console.log(1);
           const $form = $(this).closest('.form__item');
           const $input = $form.find('.form__input');
 
@@ -34,11 +33,11 @@ $(function() {
      });
 
 
-     document.querySelectorAll("form").forEach(form => {
-          form.addEventListener("submit", event => {
-               event.preventDefault();
-          });
-     });
+     // document.querySelectorAll("form").forEach(form => {
+     //      form.addEventListener("submit", event => {
+     //           event.preventDefault();
+     //      });
+     // });
 
 });
 
