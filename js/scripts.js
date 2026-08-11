@@ -107,11 +107,6 @@ $(function() {
      
      initFeaturesSlider();
      
-     // featuresSlider.on('afterChange', function(event, slick, currentSlide) {
-     //     $('.features__overlay').css('opacity', 0);
-     //     $('.features__title').css('opacity', 1);
-     // });
-     
      
      // teamslider
      

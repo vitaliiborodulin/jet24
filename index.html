@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="css/jquery.fancybox.min.css">
 	<link rel="stylesheet" href="css/nice-select.css">
 	<link rel="stylesheet" href="css/flatpickr.min.css">
-	<link rel="stylesheet" href="css/styles.css?v=8">
+	<link rel="stylesheet" href="css/styles.css?v=9">
 </head>
 
 <body class="home">
@@ -82,11 +82,11 @@
 		            <img class="hero__obj" src="img/hero-aircraft.png" alt="">
 		
 		            <div class="form__box">
-		                <form class="form form__row" method="post">
+		                <form class="form form__row form__row-1" method="post">
 		
-		                    <div class="form__item">
-		                        <label for="takeoff">From</label>
-		                        <select name="from" id="takeoff" class="form__select">
+		                    <div class="form__item form__item-from">
+		                        <label for="takeoff1">From</label>
+		                        <select name="from" id="takeoff1" class="form__select">
 		                            <option value="Dubai">Dubai</option>
 		                            <option value="Istanbul">Istanbul</option>
 		                            <option value="Yerevan">Yerevan</option>
@@ -94,19 +94,19 @@
 		                        </select>
 		                    </div>
 		
-		                    <div class="form__item">
-		                        <label for="land">To</label>
-		                        <input class="form__input" type="text" name="land" id="land" placeholder="Riyadh" autocomplete="off">
+		                    <div class="form__item form__item-land">
+		                        <label for="land1">To</label>
+		                        <input class="form__input" type="text" name="land" id="land1" placeholder="Riyadh" autocomplete="off">
 		                    </div>
 		
 		                    <div class="form__item">
-		                        <label for="cal">Date</label>
-		                        <input class="form__input cal" type="text" name="cal" id="cal" placeholder="10-12 Aug">
+		                        <label for="cal1">Date</label>
+		                        <input class="form__input cal" type="text" name="cal" id="cal1" placeholder="10-12 Aug">
 		                    </div>
 		
 		                    <div class="form__item">
-		                        <label for="guests">Passengers</label>
-		                        <input type="number" class="form__input" name="guests" id="guests" value="1" min="1" >
+		                        <label for="guests1">Passengers</label>
+		                        <input type="number" class="form__input" name="guests" id="guests1" value="1" min="1" >
 		                        <button type="button" class="minus">-</button>
 		                        <button type="button" class="plus">+</button>
 		                    </div>
@@ -490,11 +490,11 @@
 		            </div>
 		
 		            <div class="form__box">
-		                <form class="form form__row" method="post">
+		                <form class="form form__row form__row-1" method="post">
 		
-		                    <div class="form__item">
-		                        <label for="takeoff">From</label>
-		                        <select name="from" id="takeoff" class="form__select">
+		                    <div class="form__item form__item-from">
+		                        <label for="takeoff2">From</label>
+		                        <select name="from" id="takeoff2" class="form__select">
 		                            <option value="Dubai">Dubai</option>
 		                            <option value="Istanbul">Istanbul</option>
 		                            <option value="Yerevan">Yerevan</option>
@@ -502,24 +502,25 @@
 		                        </select>
 		                    </div>
 		
-		                    <div class="form__item">
-		                        <label for="land">To</label>
-		                        <input class="form__input" type="text" name="land" id="land" placeholder="Riyadh" autocomplete="off">
+		                    <div class="form__item form__item-land">
+		                        <label for="land2">To</label>
+		                        <input class="form__input" type="text" name="land" id="land2" placeholder="Riyadh" autocomplete="off">
 		                    </div>
 		
 		                    <div class="form__item">
-		                        <label for="cal">Date</label>
-		                        <input class="form__input cal" type="text" name="cal" id="cal" placeholder="10-12 Aug">
+		                        <label for="cal2">Date</label>
+		                        <input class="form__input cal" type="text" name="cal" id="cal2" placeholder="10-12 Aug">
 		                    </div>
 		
 		                    <div class="form__item">
-		                        <label for="guests">Passengers</label>
-		                        <input type="number" class="form__input" name="guests" id="guests" value="1" min="1" >
+		                        <label for="guests2">Passengers</label>
+		                        <input type="number" class="form__input" name="guests" id="guests2" value="1" min="1" >
 		                        <button type="button" class="minus">-</button>
 		                        <button type="button" class="plus">+</button>
 		                    </div>
 		                    
-		                    <button class="btn form__submit" type="submit">Request a flight</button>
+		                    <!-- <button class="btn form__submit" type="submit">Request a flight</button> -->
+		                     <button class="btn form__submit popup-link" type="button" data-src="#discuss">Request a flight</button>
 		                </form>
 		            </div>
 		
@@ -592,7 +593,46 @@
 		        <h2 class="h2">Contact Form</h2>
 		
 		        <div class="contact__form">
-		            
+		            <form class="form">
+		
+		                <div class="form__row form__row-1">
+		                    <div class="form__item form__item-from">
+		                        <select name="from" class="form__select">
+		                            <option value="Dubai">Dubai</option>
+		                            <option value="Istanbul">Istanbul</option>
+		                            <option value="Yerevan">Yerevan</option>
+		                            <option value="Larnaca">Larnaca</option>
+		                        </select>
+		                    </div>
+		                    <div class="form__item form__item-land">
+		                        <input class="form__input" type="text" name="land" placeholder="Riyadh" autocomplete="off">
+		                    </div>
+		                    <div class="form__item">
+		                        <input class="form__input cal" type="text" name="cal" placeholder="10-12 Aug">
+		                    </div>
+		                    <div class="form__item">
+		                        <input type="number" class="form__input" name="guests" id="guests2" value="1" min="1" >
+		                        <button type="button" class="minus">-</button>
+		                        <button type="button" class="plus">+</button>
+		                    </div>
+		                </div>
+		
+		                <div class="form__row">
+		                    <div class="form__item">
+		                        <input class="form__input" type="text" name="phone" placeholder="First name*" required>
+		                    </div>
+		                    <div class="form__item">
+		                        <input class="form__input" type="text" name="last" placeholder="Last name">
+		                    </div>
+		                    <div class="form__item">
+		                        <input class="form__input" type="email" name="email" placeholder="Email*" required>
+		                    </div>
+		                    <div class="form__item">
+		                        <input class="form__input" type="tel" name="phone" placeholder="Phone">
+		                    </div>
+		                </div>
+		
+		            </form>
 		        </div>
 		
 		    </div>
@@ -708,6 +748,12 @@
 	                <textarea class="form__input" name="message" id="message1" placeholder="Enter text"></textarea>
 	            </div>
 	        </div>
+	        <div class="form__row">
+	            <div class="form__item d-flex">
+	                <input type="checkbox" name="privacy" class="form__checkbox" id="privacy1">
+	                <label for="privacy1" class="form__checkbox-text">Your personal data will be processed in accordance with our <a href="#">Privacy Notice</a></label>
+	            </div>
+	        </div>
 	        <!-- <button class="btn" type="submit">Submit</button> -->
 	         <button class="btn popup-link" type="button" data-src="#success">Submit</button>
 	    </form>
@@ -726,6 +772,18 @@
 	            <div class="form__item">
 	                <label for="message2">Message</label>
 	                <textarea class="form__input" name="message" id="message2" placeholder="Enter text"></textarea>
+	            </div>
+	        </div>
+	        <div class="form__row">
+	            <div class="form__item d-flex">
+	                <input type="checkbox" name="marketing" class="form__checkbox" id="marketing">
+	                <label for="marketing" class="form__checkbox-text">I would like to receive marketing communications from Jet24 by email, post or text message</label>
+	            </div>
+	        </div>
+	        <div class="form__row">
+	            <div class="form__item d-flex">
+	                <input type="checkbox" name="privacy" class="form__checkbox" id="privacy2">
+	                <label for="privacy2" class="form__checkbox-text">Your personal data will be processed in accordance with our <a href="#">Privacy Notice</a></label>
 	            </div>
 	        </div>
 	        <!-- <button class="btn" type="submit">Submit</button> -->
@@ -748,7 +806,7 @@
 	<script src="js/slick.min.js"></script>
 	<script src="js/jquery.nice-select.min.js"></script>
 	<script src="js/flatpickr.min.js"></script>
-	<script src="js/scripts.js?v=7"></script>
+	<script src="js/scripts.js?v=8"></script>
 	<!-- end scripts -->
 
 </body>
