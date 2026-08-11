@@ -68,10 +68,12 @@
     background: transparent;
     border: 1px solid rgba(5, 64, 66, 0.1);
 
-    color: transparent;
-	-webkit-background-clip: text;
-	background-clip: text;
-    background-image: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
+    color: #042F31;
+
+    // color: transparent;
+	// -webkit-background-clip: text;
+	// background-clip: text;
+    // background-image: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
 
     &:hover,
     &:active,
@@ -80,7 +82,7 @@
     }
 
     span::after {
-        background: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
+        background: #042F31;
     }
 
     &:hover span::after,
@@ -89,4 +91,30 @@
         background: #fff;
     }
 
+}
+
+.btn-up {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    // background: url(../arrow-prev-w.svg) no-repeat center/contain;
+    border-radius: 4px;
+    z-index: 10;
+    font-size: 0;
+    color: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .md-block({
+        width: 44px;
+        height: 44px;
+        padding: 5px;
+        bottom: 10px;
+        right: 20px;
+    });
 }

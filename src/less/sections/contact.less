@@ -1,10 +1,29 @@
 .contact {
     
 
-    &__form {
+    // &__form {
         .form {
-            justify-content: space-between;
-            flex-grow: 1;
+
+            &__row {
+                .md-block({
+                    flex-wrap: wrap
+                });
+            }
+
+            &__item {
+                flex-basis: 176px;
+                flex-grow: 1;
+
+                .md-block({
+                    flex-basis: 140px;
+                });
+            }
+
+            &__item-from, &__item-land {
+                .md-block({
+                    flex-basis: 100%;
+                });
+            }
         }
-    }
+    // }
 }

@@ -15,9 +15,9 @@ module.exports = {
 		md: {
 			width: "768px"
 		},
-		// xs: {
-		// 	width: "576px",
-		// 	// fields: "10px"
-		// },
+		xs: {
+			width: "576px",
+			// fields: "10px"
+		},
 	}
 }

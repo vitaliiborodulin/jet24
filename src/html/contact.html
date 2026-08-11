@@ -3,7 +3,46 @@
         <h2 class="h2">Contact Form</h2>
 
         <div class="contact__form">
-            
+            <form class="form">
+
+                <div class="form__row form__row-1">
+                    <div class="form__item form__item-from">
+                        <select name="from" class="form__select">
+                            <option value="Dubai">Dubai</option>
+                            <option value="Istanbul">Istanbul</option>
+                            <option value="Yerevan">Yerevan</option>
+                            <option value="Larnaca">Larnaca</option>
+                        </select>
+                    </div>
+                    <div class="form__item form__item-land">
+                        <input class="form__input" type="text" name="land" placeholder="Riyadh" autocomplete="off">
+                    </div>
+                    <div class="form__item">
+                        <input class="form__input cal" type="text" name="cal" placeholder="10-12 Aug">
+                    </div>
+                    <div class="form__item">
+                        <input type="number" class="form__input" name="guests" id="guests2" value="1" min="1" >
+                        <button type="button" class="minus">-</button>
+                        <button type="button" class="plus">+</button>
+                    </div>
+                </div>
+
+                <div class="form__row">
+                    <div class="form__item">
+                        <input class="form__input" type="text" name="phone" placeholder="First name*" required>
+                    </div>
+                    <div class="form__item">
+                        <input class="form__input" type="text" name="last" placeholder="Last name">
+                    </div>
+                    <div class="form__item">
+                        <input class="form__input" type="email" name="email" placeholder="Email*" required>
+                    </div>
+                    <div class="form__item">
+                        <input class="form__input" type="tel" name="phone" placeholder="Phone">
+                    </div>
+                </div>
+
+            </form>
         </div>
 
     </div>

@@ -62,6 +62,7 @@
 
     &__title {
         position: absolute;
+        opacity: 1;
         left: 0;
         bottom: 0;
         padding: 24px;
@@ -86,13 +87,23 @@
         transition: 0.3s;
     }
 
-    &__item:hover &__overlay,
+
+
     &__item.active &__overlay {
         opacity: 1;
     }
 
-    &__item:hover &__title,
     &__item.active &__title {
+        opacity: 0;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .features__item:hover .features__overlay {
+        opacity: 1;
+    }
+
+    .features__item:hover .features__title {
         opacity: 0;
     }
 }

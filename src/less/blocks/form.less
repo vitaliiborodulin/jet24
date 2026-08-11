@@ -1,17 +1,29 @@
 .form {
-    // display: flex;
-    // flex-wrap: wrap;
-    // justify-content: center;
-    // 
-    // gap: 16px;
     text-align: left;
-
-    
 
     &__row {
         display: flex;
-        flex-wrap: wrap;
         text-align: left;
+        gap: 20px;
+        
+        .md-block({
+            flex-wrap: wrap;
+            gap: 8px;
+        });
+    }
+
+    .form__row + .form__row {
+        margin-top: 10px;
+    }
+
+    &__row-1 {
+        .form__input {
+            padding-left: 48px;
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            
+            .md(padding-left, 38px);
+        }
     }
     
     &__box {
@@ -31,46 +43,59 @@
             gap: 16px;
 
             .md-block({
+                flex-wrap: wrap;
                 gap: 8px;
             });
         }
 
         .form__item {
             position: relative;
-            // flex-basis: 230px;
-            width: 230px;
-            // flex-grow: 1;
+            flex-basis: 176px;
+            flex-grow: 1;
 
             .md-block({
-                width: 100px;
-                flex-grow: 1;
+                flex-basis: 100px;
+            });
+        }
+
+        .form__item-from, .form__item-land {
+            .md-block({
+                flex-basis: 100%;
             });
         }
 
         .form__input {
+            // flex-basis: 250px;
             height: 50px;
-            padding-left: 48px;
             background-color: @light2;
-            background-repeat: no-repeat;
-            background-position: 10px center;
             
-            .md(padding-left, 38px);
+            // .md-block({
+            //     width: 100px;
+            // });
         }
 
         label {
-
             margin-bottom: 8px;
             font-size: 15px;
-            color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-            background-image: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
+            color: #042F31;
 
             .md(display, none);
         }
+
+        .nice-select {
+            background: @light2 url(../img/takeoff.svg) no-repeat 14px center;
+        }
     }
 
-    
+    &__item {
+        position: relative;
+    }
+
+    &__item-from, &__item-land {
+       .md-block({
+            flex-basis: 100%;
+       });
+    }
 
     .plus, .minus {
         position: absolute;
@@ -87,11 +112,6 @@
         right: 20px;
     }
 
-    &__item:nth-child(1), 
-    &__item:nth-child(2) {
-        .md(width, 100%);
-    }
-
     &__submit {
         height: 50px;
         // flex-grow: 1;
@@ -101,6 +121,7 @@
     &__input {
         display: block;
         width: 100%;
+        height: 50px;
         
         padding: 16px 14px;
         border: 1px solid rgba(5, 64, 66, 0.1);
@@ -108,9 +129,8 @@
         color: @text2;
         font-size: 14px;
 
-        
-
         .md-block({
+            // width: 100px;
             padding: 12px 14px;
             font-size: 13px;
         });
@@ -145,19 +165,59 @@
         // background-clip: text;
         // background-image: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
 
-        // .md(display, none);
+        
     }
+
+    &__checkbox {
+        flex-shrink: 0;
+        margin-right: 8px;
+        position: relative;
+        width: 16px;
+        height: 16px;
+        border: 1px solid @black;
+        border-radius: 5px;
+        // -webkit-appearance: checkbox;
+
+        &::before {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: @black;
+            border-radius: 3px;
+            left: 50%;
+            top: 50%;
+            // transform: translate(-50%, 50%);
+            margin-left: -5px;
+            margin-top: -5px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease;
+        }
+
+        &:checked::before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        & + label {
+            margin-bottom: 0;
+        }
+    }
+
 }
 
 .nice-select {
     padding-left: 48px;
     width: 100%;
+    // flex-basis: 250px;
     height: 50px;
     line-height: 48px;
     // background-color: @light2;
     color: @text2;
     font-size: 14px;
-    background: @light2 url(../img/takeoff.svg) no-repeat 14px center;
+    background: url(../img/takeoff.svg) no-repeat 14px center;
 
     .md-block({
         font-size: 13px;

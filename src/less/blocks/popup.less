@@ -30,9 +30,19 @@
         .md(margin-top, 24px);
     }
 
+    a {
+        text-decoration: underline;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #042E30;
+        }
+    }
+
     &__form {
 
         .form__row {
+            flex-wrap: wrap;
             gap: 10px;
         }
         

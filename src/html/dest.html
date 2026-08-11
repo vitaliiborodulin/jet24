@@ -10,9 +10,9 @@
                         <div class="dest__subtitle">Popular Destinations</div>
                         <div class="dest__title">Dubai</div>
                     </div>
-                    <picture>
-                        <source srcset="img/dest-4-m.svg" media="(max-width: 400px)">
-                        <img src="img/dest-4.png" alt="">
+                    <picture class="dest__pic">
+                        <source srcset="img/Dubai-mobile-01.png" media="(max-width: 768px)">
+                        <img src="img/Dubai-desktop-01.png" alt="">
                     </picture>
                 </div>
 
@@ -21,9 +21,9 @@
                         <div class="dest__subtitle">Popular Destinations</div>
                         <div class="dest__title">Larnaca</div>
                     </div>
-                    <picture>
-                        <source srcset="img/dest-4-m.svg" media="(max-width: 400px)">
-                        <img src="img/dest-1.png" alt="">
+                    <picture class="dest__pic">
+                        <source srcset="img/Larnaca-mobile-01.png" media="(max-width: 768px)">
+                        <img src="img/Larnaca-desktop-01.png" alt="">
                     </picture>
                 </div>
 
@@ -32,9 +32,9 @@
                         <div class="dest__subtitle">Popular Destinations</div>
                         <div class="dest__title">Yerevan</div>
                     </div>
-                    <picture>
-                        <source srcset="img/dest-4-m.svg" media="(max-width: 400px)">
-                        <img src="img/dest-4.svg" alt="">
+                    <picture class="dest__pic">
+                        <source srcset="img/Yerevan-mobile-01.png" media="(max-width: 768px)">
+                        <img src="img/Yerevan-desktop-01.png" alt="">
                     </picture>
                 </div>
 
@@ -43,9 +43,9 @@
                         <div class="dest__subtitle">Popular Destinations</div>
                         <div class="dest__title">Istanbul</div>
                     </div>
-                    <picture>
-                        <source srcset="img/dest-4-m.svg" media="(max-width: 400px)">
-                        <img src="img/dest-4.svg" alt="">
+                    <picture class="dest__pic">
+                        <source srcset="img/Istanbul-mobile-01.png" media="(max-width: 768px)">
+                        <img src="img/Istanbul-desktop-01.png" alt="">
                     </picture>
                 </div>
 
@@ -57,11 +57,11 @@
             </div>
 
             <div class="form__box">
-                <form class="form" method="post">
+                <form class="form form__row form__row-1" method="post">
 
-                    <div class="form__item form__item-takeoff">
-                        <label for="takeoff">From</label>
-                        <select name="from" id="takeoff" class="form__select">
+                    <div class="form__item form__item-from">
+                        <label for="takeoff2">From</label>
+                        <select name="from" id="takeoff2" class="form__select">
                             <option value="Dubai">Dubai</option>
                             <option value="Istanbul">Istanbul</option>
                             <option value="Yerevan">Yerevan</option>
@@ -69,24 +69,25 @@
                         </select>
                     </div>
 
-                    <div class="form__item">
-                        <label for="land">To</label>
-                        <input class="form__input" type="text" name="land" id="land" placeholder="Riyadh" autocomplete="off">
+                    <div class="form__item form__item-land">
+                        <label for="land2">To</label>
+                        <input class="form__input" type="text" name="land" id="land2" placeholder="Riyadh" autocomplete="off">
                     </div>
 
                     <div class="form__item">
-                        <label for="cal">Date</label>
-                        <input class="form__input cal" type="text" name="cal" id="cal" placeholder="10-12 Aug">
+                        <label for="cal2">Date</label>
+                        <input class="form__input cal" type="text" name="cal" id="cal2" placeholder="10-12 Aug">
                     </div>
 
                     <div class="form__item">
-                        <label for="guests">Passengers</label>
-                        <input type="number" class="form__input" name="guests" id="guests" value="1" min="1" >
+                        <label for="guests2">Passengers</label>
+                        <input type="number" class="form__input" name="guests" id="guests2" value="1" min="1" >
                         <button type="button" class="minus">-</button>
                         <button type="button" class="plus">+</button>
                     </div>
                     
-                    <button class="btn form__submit" type="submit">Request a flight</button>
+                    <!-- <button class="btn form__submit" type="submit">Request a flight</button> -->
+                     <button class="btn form__submit popup-link" type="button" data-src="#discuss">Request a flight</button>
                 </form>
             </div>
 

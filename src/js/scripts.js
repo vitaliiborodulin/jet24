@@ -4,6 +4,7 @@ $(function() {
      //= components/overlay
      //= components/slider
      //= components/popup
+     //= components/scrollBtn
 
      $('.form__select').niceSelect();
 
