@@ -78,6 +78,8 @@ $(function() {
      
          $('.features__item').on('click', function(){
              $(this).toggleClass('active');
+             // $(this).find('.features__title').toggle();
+             // $(this).find('.features__overlay').toggle();
          });
      
      }
@@ -104,6 +106,11 @@ $(function() {
      }
      
      initFeaturesSlider();
+     
+     // featuresSlider.on('afterChange', function(event, slick, currentSlide) {
+     //     $('.features__overlay').css('opacity', 0);
+     //     $('.features__title').css('opacity', 1);
+     // });
      
      
      // teamslider
@@ -225,6 +232,29 @@ $(function() {
              preload : false
          },
          closeExisting : true
+     });
+     var arrowUpBtn = $('#scroll-button');
+     
+     function scrollBtn() {
+     	var top = $(this).scrollTop();
+     
+     	if (top > 300) {
+     		arrowUpBtn.fadeIn(500);
+     	} else {
+     		arrowUpBtn.fadeOut(500);
+     	}
+     }
+     
+     scrollBtn();
+     
+     $(window).on('scroll', scrollBtn);
+     
+     arrowUpBtn.click(function(e) {
+         e.preventDefault();
+     
+         $('body, html').animate({
+             scrollTop: 0
+         }, 300)
      });
 
      $('.form__select').niceSelect();

@@ -509,10 +509,7 @@ input[type='submit'] {
 .btn-o {
   background: transparent;
   border: 1px solid rgba(5, 64, 66, 0.1);
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-image: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
+  color: #042F31;
 }
 
 .btn-o:hover,
@@ -522,13 +519,29 @@ input[type='submit'] {
 }
 
 .btn-o span::after {
-  background: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
+  background: #042F31;
 }
 
 .btn-o:hover span::after,
 .btn-o:active span::after,
 .btn-o:focus span::after {
   background: #fff;
+}
+
+.btn-up {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border-radius: 4px;
+  z-index: 10;
+  font-size: 0;
+  color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .soc {
@@ -1039,6 +1052,7 @@ span.flatpickr-weekday {
 
 .features__title {
   position: absolute;
+  opacity: 1;
   left: 0;
   bottom: 0;
   padding: 24px;
@@ -1061,12 +1075,10 @@ span.flatpickr-weekday {
   transition: 0.3s;
 }
 
-.features__item:hover .features__overlay,
 .features__item.active .features__overlay {
   opacity: 1;
 }
 
-.features__item:hover .features__title,
 .features__item.active .features__title {
   opacity: 0;
 }
@@ -1683,6 +1695,16 @@ span.flatpickr-weekday {
   margin-top: 8px;
 }
 
+@media screen and (min-width: 769px) {
+  .features__item:hover .features__overlay {
+    opacity: 1;
+  }
+
+  .features__item:hover .features__title {
+    opacity: 0;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .home section {
     margin: 60px 0;
@@ -1707,6 +1729,14 @@ span.flatpickr-weekday {
   .btn {
     font-size: 13px;
     padding: 16px 38px;
+  }
+
+  .btn-up {
+    width: 44px;
+    height: 44px;
+    padding: 5px;
+    bottom: 10px;
+    right: 20px;
   }
 
   .soc {
@@ -2197,6 +2227,10 @@ span.flatpickr-weekday {
     margin-top: 32px;
     width: 100%;
     display: block;
+  }
+
+  .footer__right .btn {
+    width: calc(100% - 60px);
   }
 
   .footer__copyright {
