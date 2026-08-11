@@ -175,7 +175,10 @@ $(function() {
      destSlider.slick({
          slidesToShow: 1,
          slidesToScroll: 1,
+         swipe: false,
+         touchMove: false,
          draggable: false,
+         swipeToSlide: false,
          fade: true,
          nextArrow: $('.dest .arrow-next'),
          prevArrow: $('.dest .arrow-prev'),

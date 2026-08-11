@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="css/jquery.fancybox.min.css">
 	<link rel="stylesheet" href="css/nice-select.css">
 	<link rel="stylesheet" href="css/flatpickr.min.css">
-	<link rel="stylesheet" href="css/styles.css?v=6">
+	<link rel="stylesheet" href="css/styles.css?v=7">
 </head>
 
 <body class="home">
@@ -313,7 +313,6 @@
 		        </div>
 		    </div>
 		</section>
-
 		<section class="fleet" id="fleet">
 		    <div class="container">
 		        
@@ -394,7 +393,7 @@
 		                    <div class="fleet__pic">
 		                        <span class="circle circle-1"></span>
 		                        <span class="circle circle-2"></span>
-		                        <img src="img/fleet-1.png" alt="">
+		                        <img src="img/fleet-1.webp" alt="">
 		                    </div>
 		                    <div class="fleet__name">Gulfstream <br> G550</div>
 		                    <div class="fleet__table">
@@ -432,10 +431,102 @@
 		        </div>
 		    </div>
 		</section>
+		<section class="dest" id="dest">
+		    <div class="container">
 		
-
+		        <div class="dest__content">
 		
+		            <div class="dest__list">
 		
+		                <div class="dest__item">
+		                    <div class="dest__text">
+		                        <div class="dest__subtitle">Popular Destinations</div>
+		                        <div class="dest__title">Dubai</div>
+		                    </div>
+		                    <picture class="dest__pic">
+		                        <source srcset="img/Dubai-mobile-01.png" media="(max-width: 768px)">
+		                        <img src="img/Dubai-desktop-01.png" alt="">
+		                    </picture>
+		                </div>
+		
+		                <div class="dest__item">
+		                    <div class="dest__text">
+		                        <div class="dest__subtitle">Popular Destinations</div>
+		                        <div class="dest__title">Larnaca</div>
+		                    </div>
+		                    <picture class="dest__pic">
+		                        <source srcset="img/Larnaca-mobile-01.png" media="(max-width: 768px)">
+		                        <img src="img/Larnaca-desktop-01.png" alt="">
+		                    </picture>
+		                </div>
+		
+		                <div class="dest__item">
+		                    <div class="dest__text">
+		                        <div class="dest__subtitle">Popular Destinations</div>
+		                        <div class="dest__title">Yerevan</div>
+		                    </div>
+		                    <picture class="dest__pic">
+		                        <source srcset="img/Yerevan-mobile-01.png" media="(max-width: 768px)">
+		                        <img src="img/Yerevan-desktop-01.png" alt="">
+		                    </picture>
+		                </div>
+		
+		                <div class="dest__item">
+		                    <div class="dest__text">
+		                        <div class="dest__subtitle">Popular Destinations</div>
+		                        <div class="dest__title">Istanbul</div>
+		                    </div>
+		                    <picture class="dest__pic">
+		                        <source srcset="img/Istanbul-mobile-01.png" media="(max-width: 768px)">
+		                        <img src="img/Istanbul-desktop-01.png" alt="">
+		                    </picture>
+		                </div>
+		
+		            </div>
+		
+		            <div class="arrows">
+		                <div class="arrow arrow-o arrow-prev">Prev</div>
+		                <div class="arrow arrow-o arrow-next">Next</div>
+		            </div>
+		
+		            <div class="form__box">
+		                <form class="form form__row" method="post">
+		
+		                    <div class="form__item">
+		                        <label for="takeoff">From</label>
+		                        <select name="from" id="takeoff" class="form__select">
+		                            <option value="Dubai">Dubai</option>
+		                            <option value="Istanbul">Istanbul</option>
+		                            <option value="Yerevan">Yerevan</option>
+		                            <option value="Larnaca">Larnaca</option>
+		                        </select>
+		                    </div>
+		
+		                    <div class="form__item">
+		                        <label for="land">To</label>
+		                        <input class="form__input" type="text" name="land" id="land" placeholder="Riyadh" autocomplete="off">
+		                    </div>
+		
+		                    <div class="form__item">
+		                        <label for="cal">Date</label>
+		                        <input class="form__input cal" type="text" name="cal" id="cal" placeholder="10-12 Aug">
+		                    </div>
+		
+		                    <div class="form__item">
+		                        <label for="guests">Passengers</label>
+		                        <input type="number" class="form__input" name="guests" id="guests" value="1" min="1" >
+		                        <button type="button" class="minus">-</button>
+		                        <button type="button" class="plus">+</button>
+		                    </div>
+		                    
+		                    <button class="btn form__submit" type="submit">Request a flight</button>
+		                </form>
+		            </div>
+		
+		        </div>
+		
+		    </div>
+		</section>
 		<section class="steps">
 		    <div class="container">
 		        <h2 class="h2">How it Works</h2>
@@ -651,7 +742,7 @@
 	<script src="js/slick.min.js"></script>
 	<script src="js/jquery.nice-select.min.js"></script>
 	<script src="js/flatpickr.min.js"></script>
-	<script src="js/scripts.js?v=5"></script>
+	<script src="js/scripts.js?v=6"></script>
 	<!-- end scripts -->
 
 </body>

@@ -1355,11 +1355,15 @@ span.flatpickr-weekday {
   position: relative;
 }
 
-.dest__item picture {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+.dest__list {
+  height: 480px;
+}
+
+.dest__pic {
+  display: block;
+  margin-left: auto;
+  max-width: calc(100% - 220px);
+  height: 600px;
 }
 
 .dest__text {
@@ -2008,6 +2012,39 @@ span.flatpickr-weekday {
     margin-top: 28px;
   }
 
+  .dest .slick-list {
+    margin-right: -20px;
+  }
+
+  .dest__pic {
+    max-width: 100%;
+    height: 480px;
+  }
+
+  .dest__text {
+    top: unset;
+    bottom: 40px;
+  }
+
+  .dest__subtitle {
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+
+  .dest__title {
+    font-size: 24px;
+  }
+
+  .dest .arrows {
+    left: unset;
+    right: 0;
+    top: 420px;
+  }
+
+  .dest .form__box {
+    bottom: 34px;
+  }
+
   .steps .h2 {
     margin-bottom: 30px;
   }
@@ -2164,6 +2201,20 @@ span.flatpickr-weekday {
 
   .footer__copyright {
     display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .dest__content {
+    height: 680px;
+  }
+
+  .dest__pic {
+    height: 400px;
+  }
+
+  .dest .arrows {
+    top: 320px;
   }
 }
 
