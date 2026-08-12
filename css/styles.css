@@ -1255,7 +1255,7 @@ span.flatpickr-weekday {
   left: 0;
   bottom: 0;
   z-index: 1;
-  width: 100%;
+  width: 110%;
   align-self: flex-start;
   will-change: transform;
 }
@@ -2270,7 +2270,10 @@ span.flatpickr-weekday {
   }
 
   .hero__clouds {
-    bottom: 0;
+    max-width: unset;
+    width: 500px;
+    left: 50%;
+    margin-left: -250px;
   }
 
   .hero .form__box {
