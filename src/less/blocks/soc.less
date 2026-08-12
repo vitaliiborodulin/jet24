@@ -20,11 +20,19 @@
         height: 40px;
     });
 
+    svg {
+            path {
+                fill: @text;
+            }
+        }
+
     &:hover {
         // background: linear-gradient(223.8deg, #054042 9.93%, #042627 87.61%);
 
-        path {
-            fill: #fff
+        svg {
+            path {
+                fill: #fff
+            }
         }
     }
 

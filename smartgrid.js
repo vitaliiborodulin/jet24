@@ -9,9 +9,9 @@ module.exports = {
 		// xl: {
 		// 	width: "1200px",
 		// },
-		// lg: {
-		// 	width: "992px",
-		// },
+		lg: {
+			width: "1010px",
+		},
 		md: {
 			width: "768px"
 		},

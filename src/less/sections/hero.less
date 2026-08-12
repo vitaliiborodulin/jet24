@@ -3,7 +3,7 @@
     padding-top: 100px;
     padding-bottom: 40px;
     background: #EFE8E0 url(../img/hero-bg.jpg) no-repeat center bottom/cover;
-    // overflow: hidden;
+    overflow: hidden;
     
     &__content {
         display: flex;
@@ -41,8 +41,21 @@
         will-change: transform;
     }
 
+    &__clouds {
+        position: relative;
+        left: 0;
+        bottom: 200px;
+        z-index: 1;
+        align-self: flex-start;
+        will-change: transform;
+
+        .md(bottom, 0);
+    }
+
     .form__box {
+        position: relative;
         margin-top: auto;
+        z-index: 2;
 
         .md(margin-top, 50px);
     }
