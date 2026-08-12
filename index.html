@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="css/jquery.fancybox.min.css">
 	<link rel="stylesheet" href="css/nice-select.css">
 	<link rel="stylesheet" href="css/flatpickr.min.css">
-	<link rel="stylesheet" href="css/styles.css?v=10">
+	<link rel="stylesheet" href="css/styles.css?v=11">
 </head>
 
 <body class="home">
@@ -67,8 +67,8 @@
 	                        </defs>
 	                    </svg>
 	                </a>
+	                <a href="javascript:;" class="btn btn-o popup-link btn-online" data-src="#discuss"><span>Request a flight</span></a>
 	            </div>
-	            <a href="javascript:;" class="btn btn-o popup-link btn-online" data-src="#discuss"><span>Request a flight</span></a>
 	
 	            <button type="button" class="burger"><span></span></button>
 	
@@ -121,6 +121,8 @@
 		                    <button class="btn form__submit popup-link" type="button" data-src="#discuss">Request a flight</button>
 		                </form>
 		            </div>
+		
+		            <img class="hero__clouds" src="img/clouds.png" alt="">
 		
 		        </div>
 		    </div>
@@ -229,18 +231,7 @@
 		                        <p>He’s the person who picks up when a client needs a jet in the air within hours, no matter the time of night.</p>
 		                    </div>
 		                    <div class="team__link">
-		                        <a href="#" class="contacts-link" target="_blank">
-		                            Message Alex for a charter quote
-		                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-		                                <path d="M6.18182 11.0227L5.01136 9.86366L8.51705 6.35798H0V4.66479H8.51705L5.01136 1.16479L6.18182 2.19345e-05L11.6932 5.51139L6.18182 11.0227Z" fill="url(#paint0_linear_867_2591)"/>
-		                                <defs>
-		                                <linearGradient id="paint0_linear_867_2591" x1="12.113" y1="-2.84915" x2="-2.22159" y2="9.73869" gradientUnits="userSpaceOnUse">
-		                                <stop stop-color="#054042"/>
-		                                <stop offset="1" stop-color="#042627"/>
-		                                </linearGradient>
-		                                </defs>
-		                            </svg>
-		                        </a>
+		                        <a href="#" class="contacts-link btn-link" target="_blank"><span>Message Alex for a charter quote</span></a>
 		                    </div>
 		                </div>
 		            </div>
@@ -259,18 +250,7 @@
 		                        <p>Every transaction is handled with the discretion a seven-figure purchase demands</p>
 		                    </div>
 		                    <div class="team__link">
-		                        <a href="#" class="contacts-link" target="_blank">
-		                            Message Daria for a charter quote
-		                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-		                                <path d="M6.18182 11.0227L5.01136 9.86366L8.51705 6.35798H0V4.66479H8.51705L5.01136 1.16479L6.18182 2.19345e-05L11.6932 5.51139L6.18182 11.0227Z" fill="url(#paint0_linear_867_2591)"/>
-		                                <defs>
-		                                <linearGradient id="paint0_linear_867_2591" x1="12.113" y1="-2.84915" x2="-2.22159" y2="9.73869" gradientUnits="userSpaceOnUse">
-		                                <stop stop-color="#054042"/>
-		                                <stop offset="1" stop-color="#042627"/>
-		                                </linearGradient>
-		                                </defs>
-		                            </svg>
-		                        </a>
+		                        <a href="#" class="contacts-link btn-link" target="_blank"><span>Message Daria for a charter quote</span></a>
 		                    </div>
 		                </div>
 		            </div>
@@ -623,7 +603,7 @@
 		                    </div>
 		                </div>
 		
-		                <div class="form__row">
+		                <div class="form__row form__row-2">
 		                    <div class="form__item">
 		                        <input class="form__input" type="text" name="phone" placeholder="First name*" required>
 		                    </div>
@@ -635,6 +615,61 @@
 		                    </div>
 		                    <div class="form__item">
 		                        <input class="form__input" type="tel" name="phone" placeholder="Phone">
+		                    </div>
+		                </div>
+		
+		                <div class="form__row form__row-3">
+		                    <div class="form__item d-flex">
+		                        <input type="checkbox" name="privacy" class="form__checkbox" id="privacy3">
+		                        <label for="privacy3" class="form__checkbox-text">Your personal data will be processed in accordance with our <a href="#">Privacy Notice</a></label>
+		                    </div>
+		                </div>
+		
+		                <div class="form__adds">
+		                    <div class="form__row">
+		                        <div class="form__item d-flex">
+		                            <input type="checkbox" name="cons" class="form__checkbox" id="cons">
+		                            <label for="cons" class="form__checkbox-text">Concierge assistance required</label>
+		                        </div>
+		                    </div>
+		
+		                    <div class="form__row form__row-5">
+		                        <div class="label">Communiction method</div>
+		                        <div class="form__item d-flex">
+		                            <input type="checkbox" name="tg" class="form__checkbox" id="tg">
+		                            <label for="tg" class="form__checkbox-text">Telegram</label>
+		                        </div>
+		                        <div class="form__item d-flex">
+		                            <input type="checkbox" name="wa" class="form__checkbox" id="wa">
+		                            <label for="wa" class="form__checkbox-text">WhatsApp</label>
+		                        </div>
+		                    </div>
+		
+		                    <div class="form__row">
+		                        <div class="form__item">
+		                            <label for="message2">Additional request</label>
+		                            <textarea class="form__input" name="message" id="message2" placeholder="Enter text"></textarea>
+		                        </div>
+		                    </div>
+		                </div>
+		
+		                <div class="form__row form__row-last">
+		                    <div class="form__btns">
+		                        <!-- <button type="submit" class="btn">Request a flight</button> -->
+		                        <button class="btn popup-link" type="button" data-src="#success">Request a flight</button>
+		                        <button type="button" class="btn btn-o btn-adds">Additional request</button>
+		                    </div>
+		                    <div class="form__contacts">
+		                        <div class="form__contact">
+		                            <div class="form__contact-name">Dubai</div>
+		                            <a class="form__contact-tel" href="tel:+971563808973">+971 56 380 8973</a>
+		                            <a href="#" class="btn-link" target="_blank"><span>Message on WhatsApp</span></a>
+		                        </div>
+		                        <div class="form__contact">
+		                            <div class="form__contact-name">Cyprus</div>
+		                            <a class="form__contact-tel" href="tel:+971563808973">+971 56 380 8973</a>
+		                            <a href="#" class="btn-link" target="_blank"><span>Message on WhatsApp</span></a>
+		                        </div>
 		                    </div>
 		                </div>
 		
@@ -687,7 +722,7 @@
 	                    </div>
 	
 	                    <div class="footer__btns soc__btns">
-	                        <a href="#" class="soc" target="_blank" title="Telegram">
+	                       <a href="#" class="soc" target="_blank" title="Telegram">
 	                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 	                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.3749 6.8879C6.74359 4.62993 10.3236 3.14134 12.1148 2.42212C17.2292 0.36862 18.2919 0.0119045 18.9846 0.00012559C19.1369 -0.00246506 19.4776 0.0339819 19.6982 0.206816C19.8845 0.352754 19.9358 0.549895 19.9603 0.68826C19.9848 0.826626 20.0154 1.14183 19.9911 1.38811C19.714 4.1992 18.5147 11.021 17.9046 14.1694C17.6465 15.5017 17.1382 15.9484 16.6461 15.9921C15.5766 16.0871 14.7645 15.3098 13.7287 14.6543C12.1078 13.6287 11.1921 12.9902 9.61879 11.9893C7.80053 10.8327 8.97923 10.1969 10.0154 9.15799C10.2866 8.88609 14.9987 4.74867 15.0899 4.37335C15.1013 4.32641 15.1119 4.15143 15.0042 4.05904C14.8965 3.96664 14.7376 3.99824 14.6229 4.02337C14.4604 4.05898 11.871 5.71112 6.85486 8.97978C6.11988 9.46697 5.45416 9.70435 4.8577 9.69191C4.20015 9.6782 2.93528 9.33301 1.99498 9.03795C0.84166 8.67605 -0.074973 8.48471 0.00484519 7.87009C0.0464194 7.54996 0.503103 7.22256 1.3749 6.8879Z" fill="url(#paint0_linear_851_2502)"/>
 	                                <defs>
@@ -812,7 +847,7 @@
 	<script src="js/slick.min.js"></script>
 	<script src="js/jquery.nice-select.min.js"></script>
 	<script src="js/flatpickr.min.js"></script>
-	<script src="js/scripts.js?v=9"></script>
+	<script src="js/scripts.js?v=10"></script>
 	<!-- end scripts -->
 
 </body>

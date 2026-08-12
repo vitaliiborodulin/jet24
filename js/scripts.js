@@ -5,6 +5,7 @@ $(function() {
      const mm = gsap.matchMedia();
      
      mm.add("(min-width: 768px)", () => {
+     
        gsap.from(".hero__obj", {
          x: 2000, 
          ease: "none",
@@ -15,9 +16,22 @@ $(function() {
            scrub: 2,
          }
        });
+     
+       gsap.from(".hero__clouds", {
+         y: 500,
+         ease: "none",
+         scrollTrigger: {
+             trigger: ".hero",
+             start: "top top",
+             end: "bottom 60%",
+             scrub: 2
+           }
+       });
+     
      });
      
      mm.add("(max-width: 767px)", () => {
+     
        gsap.from(".hero__obj", {
            x: 800, 
            ease: "none",
@@ -29,36 +43,36 @@ $(function() {
              // markers: true
            }
        });
+     
+        gsap.from(".hero__clouds", {
+         y: 100,
+         ease: "none",
+         scrollTrigger: {
+             trigger: ".hero",
+             start: "top top",
+             end: "bottom 60%",
+             scrub: 2
+           }
+       });
+     
      });
      
      
      
      
-     // mm.add("(min-width: 768px)", () => {
-       gsap.from(".flight__obj", {
-         y: 200,
-         ease: "none",
-         scrollTrigger: {
-           trigger: ".flight",
-           start: "top bottom",
-           end: "bottom top",
-           scrub: 2
-         }
-       });
-     // });
      
-     // mm.add("(max-width: 767px)", () => {
-     //   gsap.to(".flight__obj", {
-     //     y: -280, 
-     //     ease: "none",
-     //     scrollTrigger: {
-     //       trigger: ".flight",
-     //       start: "top bottom",
-     //       end: "bottom top",
-     //       scrub: 2
-     //     }
-     //   });
-     // });
+     
+     gsap.from(".flight__obj", {
+       y: 200,
+       ease: "none",
+       scrollTrigger: {
+         trigger: ".flight",
+         start: "top bottom",
+         end: "bottom top",
+         scrub: 2
+       }
+     });
+     
      
      mm.add("(min-width: 768px)", () => {
        gsap.to(".steps__obj", {
@@ -73,6 +87,14 @@ $(function() {
            // pin: true
          }
        });
+     });
+     
+     if ("scrollRestoration" in history) {
+       history.scrollRestoration = "manual";
+     }
+     
+     window.addEventListener("load", () => {
+       ScrollTrigger.refresh();
      });
      // burger
      
@@ -94,18 +116,21 @@ $(function() {
          }
      });
      
-     $('body').on('click', '.header__menu a[href*="#"]', function(e) {
-         var fixed_offset = 50;
+     if ($(window).width() <= 768) {
      
-         $('html,body').stop().animate({
-             scrollTop: $(this.hash).offset().top - fixed_offset
-         }, 300);
-         e.preventDefault();
-         burger.toggleClass('burger-close');
-         menu.toggleClass('open');
-         $('html, body').removeClass('overflow');
-         // $('html').toggleClass('scroll-disabled');
-     });
+         $('body').on('click', '.header__menu a[href*="#"]', function(e) {
+             // var fixed_offset = 50;
+     
+             // $('html,body').stop().animate({
+             //     scrollTop: $(this.hash).offset().top - fixed_offset
+             // }, 300);
+             // e.preventDefault();
+             burger.toggleClass('burger-close');
+             menu.toggleClass('open');
+             $('html, body').removeClass('overflow');
+         });
+     
+     }
      if ($(window).width() <= 768) {
      
          $('.features__item').on('click', function(){
@@ -280,6 +305,25 @@ $(function() {
              $input.val(value - 1);
          }
      });
+     
+     // contact form hidden
+     
+     
+     $('.btn-adds').on('click', function(e) {
+         e.preventDefault();
+     
+         const formAdds = $('.form__adds');
+     
+         
+     
+         if (!$(this).hasClass('active')){
+             $(this).addClass('active');
+             formAdds.slideDown(300);
+         } else {
+             $(this).removeClass('active');
+             formAdds.slideUp(300);
+         }
+     });
      $('.popup-link').fancybox({
          // thumbs : { autoStart:true },
          toolbar: "auto",
@@ -315,16 +359,5 @@ $(function() {
              scrollTop: 0
          }, 300)
      });
-
-     
-
-     
-
-
-     // document.querySelectorAll("form").forEach(form => {
-     //      form.addEventListener("submit", event => {
-     //           event.preventDefault();
-     //      });
-     // });
 
 });
