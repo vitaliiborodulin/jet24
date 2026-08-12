@@ -18,7 +18,7 @@ $(function() {
        });
      
        gsap.from(".hero__clouds", {
-         y: 500,
+         y: 300,
          ease: "none",
          scrollTrigger: {
              trigger: ".hero",
