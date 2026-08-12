@@ -42,14 +42,21 @@
     }
 
     &__clouds {
-        position: relative;
+        position: absolute;
         left: 0;
-        bottom: 200px;
+        bottom: 0;
         z-index: 1;
+        width: 110%;
         align-self: flex-start;
         will-change: transform;
 
-        .md(bottom, 0);
+        .md-block({
+            max-width: unset;
+            width: 500px;
+            left: 50%;
+            margin-left: -250px;
+        })
+
     }
 
     .form__box {
