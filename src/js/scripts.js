@@ -2,7 +2,16 @@ if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
 
-$(function() {
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+
+  preloader.classList.add('preloader-hidden');
+  
+  setTimeout(() => {
+    preloader.remove();
+  }, 500);
+
+  $(function() {
 
      //= components/parallax
      //= components/menu
@@ -12,4 +21,14 @@ $(function() {
      //= components/popup
      //= components/scrollBtn
 
+  });
+
 });
+
+
+
+
+
+
+
+
