@@ -8,6 +8,7 @@ burger.on('click', function(e) {
     burger.toggleClass('burger-close');
     menu.toggleClass('open');
     $('html, body').toggleClass('overflow');
+     syncScrolledHeader();
 });
 
 $(document).keyup(function(e) {
@@ -15,6 +16,7 @@ $(document).keyup(function(e) {
         menu.removeClass('open');
         burger.removeClass('burger-close');
         $('html, body').removeClass('overflow');
+        syncScrolledHeader();
     }
 });
 
@@ -30,6 +32,7 @@ if ($(window).width() <= 768) {
         burger.toggleClass('burger-close');
         menu.toggleClass('open');
         $('html, body').removeClass('overflow');
+        syncScrolledHeader();
     });
 
 }

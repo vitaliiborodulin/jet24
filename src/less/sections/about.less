@@ -1,31 +1,42 @@
 .about {
-    background-image: url(../img/about-bg.svg);
-    background-repeat: no-repeat;
-    background-position-x: left;
-    background-position-y: top;
+    // background-image: url(../img/about-bg.svg);
+    // background-repeat: no-repeat;
+    // background-position-x: left;
+    // background-position-y: top;
     // background-size: contain;
-    background-size: 60% auto;
+    // background-size: 60% auto;
+
+    overflow: hidden;
     
 
     .md-block({
-        background-position-x: center;
-        background-position-y: center;
-        background-size: 100% auto;
-        padding-bottom: 66px;
+        // background-position-x: center;
+        // background-position-y: center;
+        // background-size: 100% auto;
+        // padding-bottom: 66px;
+        padding-bottom: 0;
     });
 
 
     &__content {
-        .row-flex();
+        // .row-flex();
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 80px;
+        align-items: center;
+
+        .md(display, block);
     }
 
     &__text {
-        .col();
-        .size(5);
-        .shift-left(7);
+        // .col();
+        // .size(5);
+        // .shift-left(7);
 
-        .size-md(12);
-        .shift-md-left(0);
+        // .size-md(12);
+        // .shift-md-left(0);
+        min-width: 0;
+        .md(width, 100%);
     }
 
     .h2 {
@@ -56,10 +67,56 @@
         margin-top: 60px;
 
         .md-block({
-            margin-top: 0;
-            position: absolute;
-            bottom: 0;
-            width: calc(100% - 40px);
+            // margin-top: 0;
+            // position: absolute;
+            // bottom: 0;
+            // width: calc(100% - 40px);
+
+            margin-top: 32px;
+            width: 100%;
+        });
+    }
+
+    &__media {
+        position: relative;
+        min-height: 460px;
+
+        .md-block({
+            min-height: 330px;
+            margin-top: 28px;
+        });
+    }
+
+    &__photo {
+        display: block;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    &__photo-primary {
+        width: 74%;
+        height: 420px;
+        margin-left: auto;
+
+        .md-block({
+            width: 82%;
+            height: 300px;
+        });
+    }
+
+    &__photo-secondary {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 48%;
+        height: 230px;
+        box-sizing: border-box;
+        border: 10px solid #FCFAF4;
+
+        .md-block({
+            width: 54%;
+            height: 160px;
+            border-width: 6px;
         });
     }
 
@@ -68,7 +125,7 @@
         margin-top: 60px;
         
         .md-block({
-            margin-top: 168px;
+            margin-top: 40px;
         })
     }
 
