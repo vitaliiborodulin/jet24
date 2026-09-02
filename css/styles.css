@@ -1,3 +1,58 @@
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F4F3EE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  /* Серый цвет основы */
+  border-top: 5px solid #065558;
+  /* Синий цвет активной части */
+  border-radius: 50%;
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.preloader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
 *,
 *::before,
 *::after {
@@ -1017,6 +1072,36 @@ span.flatpickr-weekday {
   box-shadow: -10px 0 0 #E4E7E1;
 }
 
+.flatpickr-current-month .numInputWrapper.jet24-year-wrapper {
+  width: 7ch;
+}
+
+.flatpickr-current-month .jet24-year-select {
+  appearance: menulist;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 300;
+  height: auto;
+  line-height: inherit;
+  margin: -1px 0 0;
+  outline: none;
+  padding: 0 0 0 0.5ch;
+  vertical-align: initial;
+  width: 100%;
+}
+
+.flatpickr-current-month .jet24-year-select:hover,
+.flatpickr-current-month .jet24-year-select:focus {
+  background: rgba(0, 0, 0, 0.05);
+}
+
 .arrows {
   display: flex;
   align-items: center;
@@ -1103,19 +1188,55 @@ span.flatpickr-weekday {
 }
 
 .header {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
-  padding: 24px 0;
-  z-index: 3;
+  padding: 0;
+  z-index: 1000;
+  isolation: isolate;
+}
+
+.header::before {
+  position: absolute;
+  z-index: 0;
+  content: '';
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(244, 243, 238, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  transition: opacity 0.35s ease;
+}
+
+.header > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.header--scrolled {
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.header--scrolled::before {
+  opacity: 1;
 }
 
 .header__content {
+  min-height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+.header--scrolled .header__content {
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 .header .logo {
@@ -1267,27 +1388,18 @@ span.flatpickr-weekday {
 }
 
 .about {
-  background-image: url(../img/about-bg.svg);
-  background-repeat: no-repeat;
-  background-position-x: left;
-  background-position-y: top;
-  background-size: 60% auto;
+  overflow: hidden;
 }
 
 .about__content {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -10px;
-  margin-right: -10px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 80px;
+  align-items: center;
 }
 
 .about__text {
-  box-sizing: border-box;
-  word-wrap: break-word;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: calc(41.66666666666667% - 20px);
-  margin-left: calc(58.333333333333336% + 10px);
+  min-width: 0;
 }
 
 .about .h2 {
@@ -1310,6 +1422,34 @@ span.flatpickr-weekday {
 
 .about__btn {
   margin-top: 60px;
+}
+
+.about__media {
+  position: relative;
+  min-height: 460px;
+}
+
+.about__photo {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 4px;
+}
+
+.about__photo-primary {
+  width: 74%;
+  height: 420px;
+  margin-left: auto;
+}
+
+.about__photo-secondary {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 48%;
+  height: 230px;
+  box-sizing: border-box;
+  border: 10px solid #FCFAF4;
 }
 
 .about__cards {
@@ -1538,6 +1678,27 @@ span.flatpickr-weekday {
 
 .team__link {
   margin-top: 24px;
+}
+
+.team__link .btn-link span {
+  position: relative;
+  padding-right: 30px;
+  display: inline-block;
+}
+
+.team__link .btn-link span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #042F31;
+  transition: width 0.3s ease;
+}
+
+.team__link .btn-link:hover span::before {
+  width: calc(100% - 30px);
 }
 
 .fleet__pic {
@@ -2281,18 +2442,15 @@ span.flatpickr-weekday {
   }
 
   .about {
-    background-position-x: center;
-    background-position-y: center;
-    background-size: 100% auto;
-    padding-bottom: 66px;
+    padding-bottom: 0;
+  }
+
+  .about__content {
+    display: block;
   }
 
   .about__text {
-    width: calc(100% - 20px);
-  }
-
-  .about__text {
-    margin-left: calc(0% + 10px);
+    width: 100%;
   }
 
   .about .h2 {
@@ -2305,14 +2463,28 @@ span.flatpickr-weekday {
   }
 
   .about__btn {
-    margin-top: 0;
-    position: absolute;
-    bottom: 0;
-    width: calc(100% - 40px);
+    margin-top: 32px;
+    width: 100%;
+  }
+
+  .about__media {
+    min-height: 330px;
+    margin-top: 28px;
+  }
+
+  .about__photo-primary {
+    width: 82%;
+    height: 300px;
+  }
+
+  .about__photo-secondary {
+    width: 54%;
+    height: 160px;
+    border-width: 6px;
   }
 
   .about__cards {
-    margin-top: 168px;
+    margin-top: 40px;
   }
 
   .about__card {

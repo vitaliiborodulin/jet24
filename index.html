@@ -5,29 +5,50 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
 
-	<title>Jet24 - Main Page</title>
+	<title>JET24 — Private Aviation Worldwide</title>
+	<meta name="description" content="Private charter flights, aircraft management and concierge aviation services worldwide.">
+	<meta name="robots" content="index,follow">
+	<!-- <link rel="canonical" href="https://jet24global.com"> -->
+	<meta property="og:type" content="website">
+	<!-- <meta property="og:url" content="https://jet24global.com"> -->
+	<meta property="og:locale" content="en_US">
+	<meta property="og:site_name" content="JET24">
+	<meta property="og:title" content="JET24 — Private Aviation Worldwide">
+	<meta property="og:description" content="Private charter flights, aircraft management and concierge aviation services worldwide.">
 
-	<link rel="icon" href="img/favicon-01.ico" type="image/x-icon">
+	<meta name="theme-color" content="#054042">
+
+	<link rel="icon" href="img/favicon-01.ico" sizes="any">
+	<link rel="icon" href="img/favicon-01.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
+	<link rel="icon" href="img/favicon-02.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
 
 	<link rel="stylesheet" href="css/slick.css">
 	<link rel="stylesheet" href="css/jquery.fancybox.min.css">
 	<link rel="stylesheet" href="css/nice-select.css">
 	<link rel="stylesheet" href="css/flatpickr.min.css">
-	<link rel="stylesheet" href="css/styles.css?v=12">
+
+	<link rel="preload" as="image" href="img/hero-aircraft.webp" type="image/webp" fetchpriority="high">
+	<link rel="preload" as="image" href="img/hero-aircraft.png" fetchpriority="high">
+
+	<link rel="stylesheet" href="css/styles.css?v=14">
 </head>
 
 <body class="home">
+
+	<div id="preloader">
+		<div class="spinner"></div>
+	</div>
 
 	<header class="header">
 	    <div class="container">
 	        <div class="header__content">
 	
 	            <div class="logo">
-	                <img src="img/logo.svg" alt="">
+	                <img src="img/logo.svg" alt="JET24 — Private Aviation">
 	            </div>
 	
 	            <div class="header__menu">
-	                <nav class="header__nav">
+	                <nav class="header__nav" aria-label="Main navigation">
 	                    <ul>
 	                        <li><a href="#about">About</a></li>
 	                        <li><a href="#services">Services</a></li>
@@ -85,7 +106,12 @@
 		            <h1 class="h1">The Private Way <span class="accent">to Fly</span></h1>
 		            <div class="hero__descr">Charter flights, aircraft management and exclusive aviation services worldwide.</div>
 		
-		            <img class="hero__obj" src="img/hero-aircraft.png" alt="">
+		            <div class="hero__obj-entry">
+		                <picture>
+		                    <source srcset="img/hero-aircraft.webp" type="image/webp">
+		                    <img class="hero__obj" src="img/hero-aircraft.png" width="1300" height="290" fetchpriority="high" alt="JET24 private jet in flight">
+		                </picture>
+		            </div>
 		
 		            <div class="form__box">
 		                <form class="form form__row form__row-1" method="post">
@@ -125,7 +151,7 @@
 		            
 		        </div>
 		    </div>
-		    <img class="hero__clouds" src="img/clouds.png" alt="">
+		    <!-- <img class="hero__clouds" src="img/clouds.png" alt=""> -->
 		</section>
 		<section class="about" id="about">
 		    <div class="container">
@@ -135,6 +161,10 @@
 		                <h2 class="h2">About <span class="accent">JET24</span></h2>
 		                <div class="about__descr">JET24 Global is a private aviation group operating worldwide — charter flights, aircraft sales, management, and concierge services. <b>Our own dispatch and flight control center ensures every flight runs seamlessly, 24/7.</b></div>
 		                <a href="javascript:;" class="btn about__btn btn-online popup-link" data-src="#discover"><span>Discover our services</span></a>
+		            </div>
+		            <div class="about__media">
+		                <img class="about__photo about__photo-primary" src="img/guar-3.jpg" alt="About JET24">
+		                <img class="about__photo about__photo-secondary" src="img/guar-2-1.jpg" alt="About JET24">
 		            </div>
 		        </div>
 		
@@ -174,30 +204,29 @@
 		
 		            <div class="features__item" style="background-image: url(img/feat-1.jpg)">
 		                <h3 class="features__title">Privacy</h3>
-		                <div class="features__overlay">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo distinctio impedit dolorem? Sapiente ad quod at ea enim culpa maiores?</div>
+		                <div class="features__overlay">No manifest with your name on it that anyone outside your circle will ever see. Your flight, your business, never a headline.</div>
 		            </div>
 		            <div class="features__item" style="background-image: url(img/feat-2.jpg)">
 		                <h3 class="features__title">Safety</h3>
-		                <div class="features__overlay">Lorem ipsum dolor sit amet.</div>
+		                <div class="features__overlay">Every aircraft, crew, and operator vetted before you ever hear the tail number.</div>
 		            </div>
 		            <div class="features__item" style="background-image: url(img/feat-3.jpg)">
 		                <h3 class="features__title">Global access</h3>
 		                <div class="features__overlay">
-		                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-		                    <p>Consequuntur quo in esse itaque laborum, aspernatur perspiciatis aut tempora rerum, ea repellendus? Sed nesciunt corporis repellat cupiditate facilis quo assumenda! Nam?</p>
+		                    <p>LFrom a private strip in Cyprus to a hangar in Dubai - 150+ destinations, one call away.</p>
 		                </div>
 		            </div>
 		            <div class="features__item" style="background-image: url(img/feat-4.jpg)">
 		                <h3 class="features__title">24/7 personal partner</h3>
-		                <div class="features__overlay">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo distinctio impedit dolorem? Sapiente ad quod at ea enim culpa maiores?</div>
+		                <div class="features__overlay">One person, day or night, who already knows how you fly and never makes you repeat yourself.</div>
 		            </div>
 		            <div class="features__item" style="background-image: url(img/feat-5.jpg)">
 		                <h3 class="features__title">Off-market opportunities</h3>
-		                <div class="features__overlay">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo distinctio impedit dolorem? Sapiente ad quod at ea enim culpa maiores?</div>
+		                <div class="features__overlay">The aircraft you want is rarely the one listed publicly. We hear about it first.</div>
 		            </div>
 		            <div class="features__item" style="background-image: url(img/feat-6.jpg)">
 		                <h3 class="features__title">One-stop service</h3>
-		                <div class="features__overlay">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo distinctio impedit dolorem? Sapiente ad quod at ea enim culpa maiores?</div>
+		                <div class="features__overlay">Charter, purchase, management, concierge - one team, one call, zero handoffs.</div>
 		            </div>
 		
 		        </div>
@@ -218,7 +247,7 @@
 		
 		            <div class="team__item">
 		                <div class="team__pic">
-		                    <img src="img/team-1.jpg" alt="">
+		                    <img src="img/alex.png" alt="Alex">
 		                    <div class="team__info">
 		                        <div class="team__name">Alex</div>
 		                        <div class="team__pos">Head of Charter Sales, Jet24</div>
@@ -238,7 +267,7 @@
 		
 		            <div class="team__item">
 		                <div class="team__pic">
-		                    <img src="img/team-2.jpg" alt="">
+		                    <img src="img/daria.png" alt="Daria">
 		                    <div class="team__info">
 		                        <div class="team__name">Daria</div>
 		                        <div class="team__pos">Head of Aircraft Sales, Jet24</div>
@@ -267,28 +296,28 @@
 		            <div class="services__list">
 		
 		                <div class="services__item">
-		                    <img class="services__pic" src="img/connecting.svg" alt="" width="40" height="40">
+		                    <img class="services__pic" src="img/connecting.svg" alt="Charter flights" width="40" height="40">
 		                    <div class="services__text">
 		                        <div class="services__title">Charter flights – </div>
 		                        <div class="services__descr">Any destination. Any time.</div>
 		                    </div>
 		                </div>
 		                <div class="services__item">
-		                    <img class="services__pic" src="img/credit.svg" alt="" width="40" height="40">
+		                    <img class="services__pic" src="img/credit.svg" alt="Aircraft sales" width="40" height="40">
 		                    <div class="services__text">
 		                        <div class="services__title">Aircraft sales – </div>
 		                        <div class="services__descr">Full technical, legal, and financial audit included.</div>
 		                    </div>
 		                </div>
 		                <div class="services__item">
-		                    <img class="services__pic" src="img/settings.svg" alt="" width="40" height="40">
+		                    <img class="services__pic" src="img/settings.svg" alt="Aircraft management" width="40" height="40">
 		                    <div class="services__text">
 		                        <div class="services__title">Aircraft management – </div>
 		                        <div class="services__descr">You fly, we manage.</div>
 		                    </div>
 		                </div>
 		                <div class="services__item">
-		                    <img class="services__pic" src="img/shield.svg" alt="" width="40" height="40">
+		                    <img class="services__pic" src="img/shield.svg" alt="Concierge services" width="40" height="40">
 		                    <div class="services__text">
 		                        <div class="services__title">Concierge services – </div>
 		                        <div class="services__descr">No request is too small or too last-minute.</div>
@@ -321,7 +350,10 @@
 		                    <div class="fleet__pic">
 		                        <span class="circle circle-1"></span>
 		                        <span class="circle circle-2"></span>
-		                        <img src="img/fleet-3.png" alt="">
+		                        <picture>
+		                            <source srcset="img/fleet-3.webp" type="image/webp">
+		                            <img src="img/fleet-3.png" alt="Bombardier Challenger 350 private jet" loading="lazy">
+		                        </picture>
 		                    </div>
 		                    <div class="fleet__name">Bombardier <br> Challenger 350</div>
 		                    <div class="fleet__table">
@@ -350,7 +382,10 @@
 		                    <div class="fleet__pic">
 		                        <span class="circle circle-1"></span>
 		                        <span class="circle circle-2"></span>
-		                        <img src="img/fleet-2.png" alt="">
+		                         <picture><source srcset="img/fleet-2.webp" type="image/webp">
+		                            <img src="img/fleet-2.png" alt="Embraer Legacy 600 private jet" loading="lazy">
+		                        </picture>
+		                            
 		                    </div>
 		                    <div class="fleet__name">Embraer <br>Legacy 600</div>
 		                    <div class="fleet__table">
@@ -379,7 +414,7 @@
 		                    <div class="fleet__pic">
 		                        <span class="circle circle-1"></span>
 		                        <span class="circle circle-2"></span>
-		                        <img src="img/fleet-1.webp" alt="">
+		                        <img src="img/fleet-1.webp" alt="Gulfstream G550 private jet" loading="lazy">
 		                    </div>
 		                    <div class="fleet__name">Gulfstream <br> G550</div>
 		                    <div class="fleet__table">
@@ -847,7 +882,7 @@
 	<script src="js/slick.min.js"></script>
 	<script src="js/jquery.nice-select.min.js"></script>
 	<script src="js/flatpickr.min.js"></script>
-	<script src="js/scripts.js?v=11"></script>
+	<script src="js/scripts.js?v=14"></script>
 	<!-- end scripts -->
 
 </body>
